@@ -7,6 +7,7 @@ const NavigationMenu = ({ setQuery, setValue, isOpen, setIsOpen }) => {
   const handleQuery = (queryName) => {
     setQuery(queryName);
     setValue(`select * from ${queryName}`);
+    console.log(queryName)
   };
 
   return (
