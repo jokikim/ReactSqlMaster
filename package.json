@@ -24,6 +24,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
     "react-redux": "^8.1.2",
+    "react-split": "^2.0.14",
     "redux": "^4.2.1"
   },
   "devDependencies": {
