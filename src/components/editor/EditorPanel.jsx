@@ -12,11 +12,11 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
   const activeTab = useSelector((state) => state.app.activeTab);
   const [query, setQuery] = useState(initialQueryName);
   const [value, setValue] = useState(initialQuery);
-  const [splitSize, setSplitSize] = useState([100, 0]);
+  // const [splitSize, setSplitSize] = useState([100, 0]);
   // const [csvData, setCsvData] = useState(null);
   const executableQuery = useSelector((state) => state.app.executableQuery);
   const [outputData, setOutputData] = useState(null);
-  const { data, runtime, isLoading } = useData(executableQuery);
+  const { data, runtime, isLoading, splitSize, setSplitSize } = useData(executableQuery);
 
   useEffect(() => {
     if (initialQuery) {
@@ -26,7 +26,7 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
 
   useEffect(() => {
     setOutputData(data);
-    setSplitSize([40, 60]);
+    // setSplitSize([40, 60]);
   }, [data]);
 
   console.log("value from panel", value);
@@ -41,7 +41,9 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
         setValue={setValue}
       />
 
-      <Split direction="vertical" minSize={0} snapOffset={30} sizes={splitSize}>
+      <Split 
+      className="h-[calc(100vh-109px)] text-slate-600"
+      direction="vertical" minSize={0} snapOffset={30} sizes={splitSize}>
         <div className="overflow-auto dark:bg-[#0d1117] text-base">
           <CodeEditor
             query={query}
@@ -52,7 +54,7 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
         </div>
         <div className="overflow-auto relative dark:bg-slate-600">
           <CodeOutput
-          isLoading={isLoading}
+            isLoading={isLoading}
             data={outputData}
             runtime={runtime}
             splitSize={splitSize}

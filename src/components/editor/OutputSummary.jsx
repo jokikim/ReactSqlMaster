@@ -1,5 +1,5 @@
 import React from "react";
-
+import { BsArrowLeft,BsArrowRight } from "react-icons/bs";
 const OutputSummary = ({
   rowCount,
   runtime,
@@ -44,7 +44,7 @@ const OutputSummary = ({
         onClick={handlePrevPage}
         disabled={currentPage === 1}
       >
-        <span className='material-symbols-outlined'>arrow_back</span>
+        <span className='material-symbols-outlined'><BsArrowLeft /></span>
       </button>
       <span className='mx-2'>Page</span>
       <input
@@ -61,7 +61,7 @@ const OutputSummary = ({
         onClick={handleNextPage}
         disabled={currentPage === totalPages}
       >
-        <span className='material-symbols-outlined'>arrow_forward</span>
+        <span className='material-symbols-outlined'><BsArrowRight /></span>
       </button>
     </div>
     {/* <ExportButton data={csvData} /> */}

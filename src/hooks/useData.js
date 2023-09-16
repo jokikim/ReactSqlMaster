@@ -11,6 +11,8 @@ const useData = (tableName) => {
   const [error, setError] = useState(false);
   const [runtime, setRuntime] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [splitSize, setSplitSize] = useState([100, 0]);
+
   const convertToJson = (data) => {
     alasql
       .promise("SELECT * FROM CSV(?, {headers: false, separator:','})", [data])
@@ -47,6 +49,7 @@ const useData = (tableName) => {
             toast.error(error.message);
           });
           setIsLoading(false);
+          setSplitSize([40, 60]);
       } else {
         setError(true);
         toast.error("Please enter a valid query");
@@ -58,7 +61,7 @@ const useData = (tableName) => {
     setRuntime(t1 - t0);
   }, [tableName]);
 
-  return { data, runtime, error, isLoading };
+  return { data, runtime, error, isLoading, splitSize, setSplitSize };
 };
 
 export default useData;
