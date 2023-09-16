@@ -100,4 +100,5 @@ const appSlice = createSlice({
   }
 })
 
-export const { toggleFullScreen } = appSlice.actions;
+export const { changeActiveTab, addNewTab, removeTab } = appSlice.actions;
+export default appSlice.reducer;

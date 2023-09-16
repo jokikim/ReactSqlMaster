@@ -1,14 +1,21 @@
 import React from 'react'
-
+import { useDispatch, useSelector } from 'react-redux';
+import { changeActiveTab, addNewTab, removeTab } from '../../redux/appSlice';
+import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 const EditorTabs = () => {
+  const dispatch = useDispatch();
+  const fullScreen = useSelector((state) => state.app.fullScreen)
+  const activeTab = useSelector((state) => state.app.activeTab);
+  const tabs = useSelector((state) => state.app.tabs);
+
   return (
-    <div className='flex flex-col w-full divide-y dark:divide-slate-700'>
+    <div className='flex flex-col w-[100vw] divide-y dark:divide-slate-700'>
       <div
         className={`${
           fullScreen ? '' : 'hidden'
         } flex justify-between dark:bg-slate-900 dark:text-slate-300`}
       >
-        <div className='flex gap-x-1 max-w-[calc(100vw-350px)]'>
+        <div className='flex gap-x-1 '>
           <div className='flex overflow-auto'>
             {tabs.map((tab) => (
               <div
@@ -18,7 +25,7 @@ const EditorTabs = () => {
                     ? 'bg-white-100 border-b-2 border-b-blue-500'
                     : 'bg-gray-200 dark:border-slate-800 border-b-2 dark:bg-slate-800 '
                 }`}
-                onClick={() => changeActiveTab(tab.id)}
+                onClick={() => (changeActiveTab(tab.id))}
               >
                 <span> {tab.title}</span>
 
@@ -29,7 +36,7 @@ const EditorTabs = () => {
                     removeTab(tab.id);
                   }}
                 >
-                  <span className='-mr-1 material-symbols-outlined'>close</span>
+                  <span className='-mr-1 material-symbols-outlined'><AiOutlineClose /></span>
                 </button>
               </div>
             ))}
@@ -38,7 +45,7 @@ const EditorTabs = () => {
             className='min-w-[50px] h-[50px] bg-gray-200 text-blue-600 dark:bg-slate-800 flex items-center justify-center hover:bg-gray-300 dark:hover:bg-slate-700 dark:text-blue-400'
             onClick={() => addNewTab()}
           >
-            <span className='material-symbols-outlined'>add</span>
+            <span className='material-symbols-outlined'><AiOutlinePlus /></span>
           </button>
         </div>
         {/* <DarkModeSwitch /> */}

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import NavigationMenu from "./components/layout/NavigationMenu";
-import Editor from "./components/editor/Editor";
+import Editor from "./components/editor/EditorCopy";
+import EditorTabs from "./components/editor/EditorTabs";
 
 function App() {
   const [query, setQuery] = useState('');
@@ -15,12 +16,15 @@ function App() {
       isOpen={isOpen}
       setIsOpen={setIsOpen}
       />
-      <Editor 
+      {/* <Editor 
        setQuery={setQuery}
        value={value}
        setValue={setValue}
        isOpen={isOpen}
-      />
+      /> */}
+      <div>
+        <EditorTabs />
+      </div>
     </div>
   )
 }
