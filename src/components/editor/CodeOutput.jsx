@@ -6,8 +6,21 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
 
   const [resultsPerPage, setResultsPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
+  const [tableHeader, setTableHeader] = useState(null);
   const totalPages = data ? Math.ceil(data.length / resultsPerPage) : 0;
-  const currentResults = data ? data.slice((currentPage - 1) * resultsPerPage, currentPage * resultsPerPage) : null;
+  
+  useEffect(() => {
+    if (data && data.length > 0) {
+      setTableHeader(Object.values(data[0]));
+    } else {
+      // If data is null or empty, you can set an empty array or handle it accordingly
+      setTableHeader([]);
+    }
+  }, [data]);
+  
+  
+  
+  const currentResults = data ? data.slice(1).slice((currentPage - 1) * resultsPerPage, currentPage * resultsPerPage) : null;
 
   useEffect(() => {
     setCurrentPage(1);
@@ -35,6 +48,7 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
     setCurrentPage(1); // Reset the current page when results per page changes
   };
 
+  
 
   console.log({data})
   return (
@@ -58,6 +72,7 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
 
         <div className='h-full'>
           <Table 
+          tableHeader={tableHeader}
           isLoading={isLoading}
           data={currentResults}
           currentPage={currentPage}

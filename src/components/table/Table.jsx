@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Table = ({
+  tableHeader,
   isLoading,
   data,
   currentPage,
@@ -23,8 +24,9 @@ const Table = ({
   }
 
   // Extract the headers from the first object in the data array
-  const headers = Object.keys(data[0]);
-
+  // const headers = Object.values(data[0]);
+  // const rowsData = data.slice(1);
+  console.log({data})
   return (
     <table className='dark:text-slate-300 border-collapse border border-hidden text-sm table-auto w-full'>
       <thead>
@@ -34,7 +36,7 @@ const Table = ({
             #
           </th>
           {/* Render table headers */}
-          {headers.map((header, index) => (
+          {tableHeader.map((header, index) => (
             <th
               className='p-2 border border-gray-300 dark:border-slate-600'
               key={index}
@@ -48,24 +50,19 @@ const Table = ({
         {/* Render table rows */}
         {data.map((row, rowIndex) => (
           <tr
-            className={`${
-              rowIndex % 2 === 0
-                ? 'even:bg-slate-50 dark:even:bg-slate-800'
-                : 'dark:bg-slate-900'
-            }`}
+            className='even:bg-slate-50 dark:bg-slate-900 dark:even:bg-slate-800'
             key={rowIndex}
           >
             {/* Render row number */}
             <td className='bg-gray-100 dark:bg-slate-700 p-2 border border-gray-300 dark:border-slate-600'>
               {rowIndex + 1 + (currentPage - 1) * resultsPerPage}
             </td>
-            {/* Render table cells using headers */}
-            {headers.map((header, cellIndex) => (
+            {Object.values(row).map((value, cellIndex) => (
               <td
                 className='p-2 border border-gray-300 dark:border-slate-700'
                 key={cellIndex}
               >
-                {row[header]}
+                {value}
               </td>
             ))}
           </tr>
