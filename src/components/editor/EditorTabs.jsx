@@ -5,7 +5,7 @@ import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 import EditorPanel from './EditorPanel';
 
 
-const EditorTabs = ({}) => {
+const EditorTabs = () => {
   const dispatch = useDispatch();
   const value = useSelector((state) => state.app.value);
 
@@ -26,7 +26,7 @@ const EditorTabs = ({}) => {
   };
 
   return (
-    <div className="flex flex-col w-[100vw] divide-y dark:divide-slate-700">
+    <div className="flex flex-col  divide-y dark:divide-slate-700">
     <div
       className={`${
         fullScreen ? "" : "hidden"
@@ -67,7 +67,7 @@ const EditorTabs = ({}) => {
       </div>
     </div>
 
-    {
+    {/* {
       tabs.map((tab) => (
         <EditorPanel 
         key={tab.id}
@@ -76,7 +76,7 @@ const EditorTabs = ({}) => {
         initialQuery={tab.query}
         />
       ))
-    }
+    } */}
   </div>
   )
 }

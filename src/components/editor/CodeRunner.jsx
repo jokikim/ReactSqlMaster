@@ -4,28 +4,21 @@ import { HiOutlinePlay } from 'react-icons/hi';
 import { MdOutlineSettingsBackupRestore } from 'react-icons/md'
 import useData from '../../hooks/useData';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateQuery } from '../../redux/appSlice';
+import { toggleFullScreen, updateQuery } from '../../redux/appSlice';
 import { runQueryHandler } from '../../redux/appSlice';
 
-const CodeRunner = ({ query, setQuery, value, setValue}) => {
+const CodeRunner = ({ query, setQuery, value, setValue, handleQueryReset}) => {
 
   const dispatch = useDispatch();
+  // const executableQuery = useSelector((state) => state.app.executableQuery);
+  // const { isLoading } = useData(executableQuery);
   // const query = useSelector((state) => state.app.query);
-
-  // const onRunQuery = () => { 
-  //   var Z = value.toLowerCase().slice(value.indexOf("from") + "from".length);
-  //   setQuery(Z.split(" ")[1]);
-  // };
-
-
-  // const { data, runtime } = useData(query);
-  // console.log('queryData', data);
 
   return (
     <div className='bg-gray-50 dark:bg-slate-800 flex justify-between items-center px-4 py-2 whitespace-nowrap'>
       <div className='flex gap-x-4'>
         <button
-          // disabled={!query || loading}
+          // disabled={!query || isLoading}
           onClick={() => dispatch(runQueryHandler())}
           className='flex justify-center items-center text-sm dark:text-slate-100 dark:bg-green-700 dark:hover:bg-green-600 bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg text-white px-5 py-2 gap-1 disabled:bg-gray-400 dark:disabled:bg-gray-500 disabled:cursor-not-allowed'
         >
@@ -34,7 +27,7 @@ const CodeRunner = ({ query, setQuery, value, setValue}) => {
         </button>
 
         <button
-          // onClick={() => handleQueryReset()}
+          onClick={() => handleQueryReset()}
           className='dark:bg-slate-600 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300 text-sm flex justify-center items-center border-solid border border-gray-500 rounded-lg p-2'
         >
           <span className='material-symbols-outlined'>
@@ -43,28 +36,13 @@ const CodeRunner = ({ query, setQuery, value, setValue}) => {
         </button>
 
         <button
-          // onClick={toggleFullScreen}
+          onClick={() => dispatch(toggleFullScreen())}
           className='dark:bg-slate-600 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300 text-sm flex justify-center items-center border-solid border border-gray-500 rounded-lg p-2'
         >
           <span className='material-symbols-outlined'><BsAspectRatio /></span>
         </button>
       </div>
-      <div className='flex gap-x-4'>
-        <input
-          className='dark:text-slate-300 dark:bg-slate-700 dark:border-slate-700 placeholder:text-sm focus:outline-blue-500 dark:focus:outline-none dark:focus:border-none px-4 py-2 rounded-lg w-[300px] border'
-          placeholder='Enter query name...'
-          spellCheck='false'
-          // value={queryName}
-          // onChange={(e) => setQueryName(e.target.value)}
-        />
-        <button
-          // onClick={() => saveNewQuery(queryName, query)}
-          className='dark:bg-slate-600 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300 text-sm flex justify-center items-center border-solid border border-gray-500 rounded-lg px-5 py-2 gap-1 disables:opacity-80'
-        >
-          <span className='material-symbols-outlined'>save</span>
-          Save Query
-        </button>
-      </div>
+     
     </div>
   )
 }

@@ -13,15 +13,11 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
     if (data && data.length > 0) {
       setTableHeader(Object.values(data[0]));
     } else {
-      // If data is null or empty, you can set an empty array or handle it accordingly
       setTableHeader([]);
     }
   }, [data]);
   
-  
-  
   const currentResults = data ? data.slice(1).slice((currentPage - 1) * resultsPerPage, currentPage * resultsPerPage) : null;
-
   useEffect(() => {
     setCurrentPage(1);
   } ,[data])
@@ -70,7 +66,7 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
           />
         )}
 
-        <div className='h-full'>
+        <div className=''>
           <Table 
           tableHeader={tableHeader}
           isLoading={isLoading}

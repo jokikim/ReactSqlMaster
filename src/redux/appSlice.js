@@ -5,8 +5,6 @@ const initialState = {
   darkMode: true,
   tabCount: 1,
   activeTab: 1,
-  query: "",
-  value: "SELECT * from customers",
   executableQuery: "",
   tabs: [
     {
@@ -29,12 +27,6 @@ const appSlice = createSlice({
     toggleDarkMode: throttle((state) => {
       state.darkMode = !state.darkMode;
     }, 250),
-    updateQuery: (state, action) => {
-      state.query = action.payload;
-    },
-    updateValue: (state, action) => {
-      state.value = action.payload;
-    },
     saveNewQuery: (state, action) => {
       const { queryName, query } = action.payload;
 
@@ -132,6 +124,8 @@ const appSlice = createSlice({
 });
 
 export const {
+  toggleFullScreen,
+  toggleDarkMode,
   updateQuery,
   updateValue,
   changeActiveTab,

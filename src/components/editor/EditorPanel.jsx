@@ -32,6 +32,14 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
   console.log("value from panel", value);
   const isActiveTab = tabId === activeTab;
 
+  const handleQueryReset = () => {
+    const userConfirmed = window.confirm(
+      'Are you sure? you want to reset editor?'
+    );
+    if (!userConfirmed) return;
+    setQuery(initialQuery);
+  };
+
   return (
     <div className={`${isActiveTab === false && "hidden"}`}>
       <CodeRunner
@@ -39,6 +47,7 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
         setQuery={setQuery}
         value={value}
         setValue={setValue}
+        handleQueryReset={handleQueryReset}
       />
 
       <Split 
