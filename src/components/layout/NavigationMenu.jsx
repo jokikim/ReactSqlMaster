@@ -2,7 +2,7 @@ import React from 'react'
 import TABLE_NAMES from '../../utils/constants';
 import { convertToNormalString } from '../../utils/utilFunctions';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateQuery, updateValue } from '../../redux/appSlice';
+import { updateCurrentEditorValue, updateQuery, updateValue } from '../../redux/appSlice';
 
 const NavigationMenu = ({ isOpen, setIsOpen }) => {
 
@@ -11,9 +11,9 @@ const NavigationMenu = ({ isOpen, setIsOpen }) => {
   // const updateValue = useSelector((state) => state.app.updateValue);
 
   const handleQuery = (queryName) => {
-    dispatch(updateQuery(queryName));
+    // dispatch(updateQuery(queryName));
     // setQuery(queryName);
-    dispatch(updateValue(`select * from ${queryName}`));
+    dispatch(updateCurrentEditorValue(`select * from ${queryName}`));
     // setValue(`select * from ${queryName}`);
   };
 

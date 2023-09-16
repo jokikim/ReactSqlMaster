@@ -10,6 +10,7 @@ const useData = (tableName) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [runtime, setRuntime] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const convertToJson = (data) => {
     alasql
       .promise("SELECT * FROM CSV(?, {headers: false, separator:','})", [data])
@@ -24,6 +25,7 @@ const useData = (tableName) => {
 
   useEffect(() => {
     const fetchData = (tableName) => {
+      setIsLoading(true);
       setData([]);
       const name = TABLE_NAMES.find((name) => name === tableName);
       if (name) {
@@ -44,6 +46,7 @@ const useData = (tableName) => {
           .catch((error) => {
             toast.error(error.message);
           });
+          setIsLoading(false);
       } else {
         setError(true);
         toast.error("Please enter a valid query");
@@ -55,7 +58,7 @@ const useData = (tableName) => {
     setRuntime(t1 - t0);
   }, [tableName]);
 
-  return { data, runtime, error };
+  return { data, runtime, error, isLoading };
 };
 
 export default useData;

@@ -5,29 +5,28 @@ import { MdOutlineSettingsBackupRestore } from 'react-icons/md'
 import useData from '../../hooks/useData';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateQuery } from '../../redux/appSlice';
-
+import { runQueryHandler } from '../../redux/appSlice';
 
 const CodeRunner = ({ query, setQuery, value, setValue}) => {
 
   const dispatch = useDispatch();
   // const query = useSelector((state) => state.app.query);
 
-  const onRunQuery = () => {
-    var Z = value.toLowerCase().slice(value.indexOf("from") + "from".length);
-    dispatch(updateQuery(Z.split(" ")[1]));
-    // setQuery(Z.split(" ")[1]);
-  };
+  // const onRunQuery = () => { 
+  //   var Z = value.toLowerCase().slice(value.indexOf("from") + "from".length);
+  //   setQuery(Z.split(" ")[1]);
+  // };
 
 
-  const { data, runtime } = useData(query);
-  console.log('queryData', data);
+  // const { data, runtime } = useData(query);
+  // console.log('queryData', data);
 
   return (
     <div className='bg-gray-50 dark:bg-slate-800 flex justify-between items-center px-4 py-2 whitespace-nowrap'>
       <div className='flex gap-x-4'>
         <button
           // disabled={!query || loading}
-          onClick={onRunQuery}
+          onClick={() => dispatch(runQueryHandler())}
           className='flex justify-center items-center text-sm dark:text-slate-100 dark:bg-green-700 dark:hover:bg-green-600 bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg text-white px-5 py-2 gap-1 disabled:bg-gray-400 dark:disabled:bg-gray-500 disabled:cursor-not-allowed'
         >
           <span className='-ml-2 material-symbols-outlined'><BsPlay /></span>

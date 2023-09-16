@@ -5,21 +5,22 @@ const initialState = {
   darkMode: true,
   tabCount: 1,
   activeTab: 1,
-  query: '',
+  query: "",
   value: "SELECT * from customers",
+  executableQuery: "",
   tabs: [
     {
       id: 1,
-      title: 'Tab 1',
-      queryName: '',
-      query: 'select * from customers',
-    }
+      title: "Tab 1",
+      queryName: "",
+      query: "select * from customers",
+    },
   ],
-  savedQueries: JSON.parse(localStorage.getItem('savedQueries')) || {},
-}
+  savedQueries: JSON.parse(localStorage.getItem("savedQueries")) || {},
+};
 
 const appSlice = createSlice({
-  name: 'app',
+  name: "app",
   initialState,
   reducers: {
     toggleFullScreen: throttle((state) => {
@@ -36,7 +37,7 @@ const appSlice = createSlice({
     },
     saveNewQuery: (state, action) => {
       const { queryName, query } = action.payload;
-      
+
       if (!queryName) {
         window.alert("Query Name Cannot be Empty");
         return;
@@ -49,7 +50,9 @@ const appSlice = createSlice({
       const alreadyExists = queryName in state.savedQueries;
       const newSavedQueries = { ...state.savedQueries, [queryName]: query };
       localStorage.setItem("savedQueries", JSON.stringify(newSavedQueries));
-      window.alert(`${alreadyExists ? "Updated" : "Saved"} "${queryName}" Query!`);
+      window.alert(
+        `${alreadyExists ? "Updated" : "Saved"} "${queryName}" Query!`
+      );
 
       state.savedQueries = newSavedQueries;
     },
@@ -65,7 +68,7 @@ const appSlice = createSlice({
     changeActiveTab: (state, action) => {
       state.activeTab = action.payload;
     },
-    addNewTab: (state, action) => {
+    addNewTab: (state) => {
       // const { queryName = "", query = "" } = action.payload;
       let queryName = "";
       let query = "";
@@ -106,9 +109,35 @@ const appSlice = createSlice({
 
       state.activeTab = newActiveTabId;
     },
+    updateCurrentEditorValue: (state, action) => {
+      const query = action.payload;
+      const currentTab = state.tabs.findIndex(
+        (tab) => tab.id.toString() === state.activeTab.toString()
+      );
+      state.tabs[currentTab].query = query;
+    },
+    runQueryHandler: (state) => {
+      const currentTab = state.tabs.findIndex(
+        (tab) => tab.id.toString() === state.activeTab.toString()
+      );
+      const currentQuery = state.tabs[currentTab].query;
+      let Z = currentQuery
+        .toLowerCase()
+        .slice(currentQuery.indexOf("from") + "from".length);
+      // dispatch(updateQuery(Z.split(" ")[1]));
+      state.executableQuery = Z.split(" ")[1];
+      // setQuery(Z.split(" ")[1]);
+    },
+  },
+});
 
-  }
-})
-
-export const { updateQuery, updateValue,changeActiveTab, addNewTab, removeTab } = appSlice.actions;
+export const {
+  updateQuery,
+  updateValue,
+  changeActiveTab,
+  addNewTab,
+  removeTab,
+  updateCurrentEditorValue,
+  runQueryHandler,
+} = appSlice.actions;
 export default appSlice.reducer;
