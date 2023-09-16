@@ -5,12 +5,14 @@ const initialState = {
   darkMode: true,
   tabCount: 1,
   activeTab: 1,
+  query: '',
+  value: "SELECT * from customers",
   tabs: [
     {
       id: 1,
       title: 'Tab 1',
-      queryName: 'All Customers',
-      query: 'SELECT * FROM customers',
+      queryName: '',
+      query: 'select * from customers',
     }
   ],
   savedQueries: JSON.parse(localStorage.getItem('savedQueries')) || {},
@@ -26,6 +28,12 @@ const appSlice = createSlice({
     toggleDarkMode: throttle((state) => {
       state.darkMode = !state.darkMode;
     }, 250),
+    updateQuery: (state, action) => {
+      state.query = action.payload;
+    },
+    updateValue: (state, action) => {
+      state.value = action.payload;
+    },
     saveNewQuery: (state, action) => {
       const { queryName, query } = action.payload;
       
@@ -58,7 +66,9 @@ const appSlice = createSlice({
       state.activeTab = action.payload;
     },
     addNewTab: (state, action) => {
-      const { queryName = "", query = "" } = action.payload;
+      // const { queryName = "", query = "" } = action.payload;
+      let queryName = "";
+      let query = "";
       if (state.tabs.length >= 15) {
         window.alert("Max Tab Limit Reached!!!");
         return;
@@ -100,5 +110,5 @@ const appSlice = createSlice({
   }
 })
 
-export const { changeActiveTab, addNewTab, removeTab } = appSlice.actions;
+export const { updateQuery, updateValue,changeActiveTab, addNewTab, removeTab } = appSlice.actions;
 export default appSlice.reducer;

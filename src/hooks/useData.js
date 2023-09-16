@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import alasql from "alasql";
 import toast from "react-hot-toast";
-import TABLE_NAMES from "../constants/constants";
+import TABLE_NAMES from "../utils/constants";
 
 const getURL = (name) =>
   `https://api.github.com/repos/graphql-compose/graphql-compose-examples/contents/examples/northwind/data/csv/${name}.csv`;

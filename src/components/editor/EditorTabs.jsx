@@ -5,8 +5,10 @@ import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 import EditorPanel from './EditorPanel';
 
 
-const EditorTabs = () => {
+const EditorTabs = ({}) => {
   const dispatch = useDispatch();
+  const value = useSelector((state) => state.app.value);
+
   const fullScreen = useSelector((state) => state.app.fullScreen)
   const activeTab = useSelector((state) => state.app.activeTab);
   const tabs = useSelector((state) => state.app.tabs);
