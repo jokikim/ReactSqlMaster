@@ -26,7 +26,7 @@ const CodeRunner = ({ query, setQuery, value, setValue, handleQueryReset}) => {
           <span className='-ml-2 material-symbols-outlined'><BsPlay /></span>
           Run Query
         </button>
-
+{/* 
         <button
           onClick={() => handleQueryReset()}
           className='dark:bg-slate-600 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300 text-sm flex justify-center items-center border-solid border border-gray-500 rounded-lg p-2'
@@ -34,16 +34,18 @@ const CodeRunner = ({ query, setQuery, value, setValue, handleQueryReset}) => {
           <span className='material-symbols-outlined'>
             <MdOutlineSettingsBackupRestore />
           </span>
-        </button>
+        </button> */}
 
+      </div>
+      <div className='flex items-center justify-center gap-4'>
         <button
           onClick={() => dispatch(toggleFullScreen())}
-          className='dark:bg-slate-600 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300 text-sm flex justify-center items-center border-solid border border-gray-500 rounded-lg p-2'
+          className='dark:bg-slate-600 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300  flex justify-center items-center border-solid border border-gray-500 rounded-lg p-2'
         >
-          <span className='material-symbols-outlined'><BsAspectRatio /></span>
+          <span className='material-symbols-outlined'><BsAspectRatio className='w-6 h-6' /></span>
         </button>
-      </div>
       <DarkModeToggle />
+      </div>
 
     </div>
   )

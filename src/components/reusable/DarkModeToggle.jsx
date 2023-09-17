@@ -20,7 +20,8 @@ const DarkModeToggle = () => {
   return (
     <div
       onClick={handleDarkModeToggle}
-      className="flex items-center justify-center select-none cursor-pointer w-[50px]  rounded-full p-1 border-gray-400 border"
+      className='dark:bg-slate-600 dark:text-slate-100 dark:border-slate-600 dark:hover:bg-slate-500 cursor-pointer hover:bg-gray-200 active:bg-gray-300 text-sm flex justify-center items-center border-solid border border-gray-500 rounded-lg p-2'
+      // className="flex items-center justify-center select-none cursor-pointer w-[50px]  rounded-full p-1 border-gray-400 border"
     >
       <span className="material-symbols-outlined">
         {theme === "dark" ? (

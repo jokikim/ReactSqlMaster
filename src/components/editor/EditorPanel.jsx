@@ -58,8 +58,6 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
       direction="vertical" minSize={0} snapOffset={30} sizes={splitSize}>
         <div className="overflow-auto dark:bg-[#0d1117] text-base">
           <CodeEditor
-            query={query}
-            setQuery={setQuery}
             value={value}
             setValue={setValue}
           />
