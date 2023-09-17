@@ -3,7 +3,6 @@ import OutputSummary from './OutputSummary';
 import Table from '../table/Table';
 
 const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
-
   const [resultsPerPage, setResultsPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
   const [tableHeader, setTableHeader] = useState(null);
