@@ -1,10 +1,10 @@
 # 🚀👨‍💻 REACT SQL Editor
 
-## Optimizing Your SQL Query Management Web Application for Enhanced User Experience
-
+### ⚡Optimizing Your SQL Query Management Web Application for Enhanced User Experience
+### ⚡Built using `React`, `Redux Toolkit` & `TailwindCSS`
 React SQL Editor is a sophisticated tool designed for data analysts to execute and manage SQL queries seamlessly. It offers an intuitive interface that allows users to run queries, view results in tabular format, and save frequently used queries for future reference. 
 
-![Homepage](src/assets/screenshots/screenshot-readme.png)
+![Homepage](src/assets/screenshots/sqlhomepage.png)
 
 ## 👨‍💻 Demo
 
@@ -21,17 +21,17 @@ Try out the website : [REACT SQL Editor](https://reactsqlmaster.vercel.app/)
 
 ## 👨‍💻 Features
 
-:white_check_mark: Query Fetching.\
-  1. CSV data is fetched from teh github repo itself.
-  2. Data is not stored locally.
+:white_check_mark: Efficient GitHub Data Retrieval
+  Our app swiftly fetches CSV data from GitHub, offering you the latest information without storing it locally. Enjoy real-time data access and enhanced security.
 
 :white_check_mark: Code Editor Tabs.\
-  1. App uses tab-based interface to manage multiple sql queries
-  2. Each tab runds different query.
+  Our application utilizes a tab-based system for managing multiple SQL queries effortlessly. Each tab serves as a dedicated workspace, housing a query editor and displaying results.
+
+  `Note:` To ensure optimal performance, we limit the number of tabs to 15. This restriction prevents clutter and maintains a user-friendly experience, with timely notifications when the limit is reached.
 
 :white_check_mark: SQL Query Execution in Editor.\
-  1. Users can run SQL queries by writing the predefined queries in the editor.
-  2. Users can run following predefined queries: 
+  1. Users can seamlessly execute SQL queries using our editor.
+  2. We provide predefined queries for convenience: 
      
     - `select * from customers`
     - `select * from categories`
@@ -44,34 +44,29 @@ Try out the website : [REACT SQL Editor](https://reactsqlmaster.vercel.app/)
     - `select * from suppliers`
     - `select * from territories`
 
-:white_check_mark: Full Screen View Of Editor.\
-   User can toggle between full screen to get the full screen view of the editor.
+:white_check_mark: Dark Mode and Theme Persistence. \
+  Customize your experience with the flexibility to switch between Dark Mode and Light Mode. Your chosen theme is intelligently saved in Local Storage, ensuring your preferred mode is maintained across sessions. Enjoy a visually tailored environment that suits your preference every time you return.
 
-:white_check_mark: Dark Mode & Local storage usage. \
-  1. User can toggle between Dark Mode and Light Mode.
-  2. Current theme is persisted in the Local Storage.
 
-:white_check_mark: Split View. \
-  1. User can see the split view of Code Editor & the Results.
-  2. The Split window is Draggle Vertically.
+:white_check_mark: Full-Screen Editor Mode.\
+   Experience a distraction-free workspace by effortlessly switching to a full-screen view of the editor with a single click.
 
-:white_check_mark: Execution time. \
-  User can see time taken by the query to run  & fetch results.
+:white_check_mark: Split View for Enhanced Productivity. \
+  Elevate your workflow with the dynamic split view feature. Seamlessly examine your SQL code in the Code Editor alongside real-time query results. This intuitive split window allows you to effortlessly drag the divider vertically, adapting the view to your precise needs. Experience unparalleled convenience as you edit and observe outcomes in a synchronized manner, boosting your productivity.
 
-:white_check_mark: Table Schema. \
-  User can see the information related to the tables including number of rows, rows per page & the table headers..
+:white_check_mark: Query Execution Time Insight. \
+  Gain valuable insights into query performance with our execution time feature. Track the precise duration it takes for your SQL query to run and fetch results. This real-time feedback empowers you to optimize and fine-tune your queries for efficiency and speed. Stay in control of your data analysis process by monitoring execution times at a glance.
 
-:white_check_mark: Execution time. \
-  User can see time taken by the query to run  & fetch results.
+:white_check_mark: Comprehensive Table Schema Insights. \
+  UsExplore the details of your tables effortlessly. Our user-friendly interface provides you with comprehensive information about your data, including the total number of rows, the option to specify rows per page for easy navigation, and a clear view of table headers. This intuitive table schema view equips you with the insights you need to effectively analyze and manipulate your data, enhancing your data analysis experience.
 
-:white_check_mark: Toast Notifcations. \
-  User is notified by Toasts on sucessfully query or error.
 
-:white_check_mark: Export CSV or JSON. \
-  User can download results in the CSV or JSON format.
+:white_check_mark: Informative Toast Notifications. \
+  Stay informed at every step of your query execution. Our application keeps you in the loop with informative toast notifications. Whether your query runs successfully or encounters an error, you'll receive timely and clear notifications, ensuring that you're always aware of the status of your queries. These toast notifications are designed to enhance your user experience, providing valuable feedback and keeping you updated on the progress of your tasks.
 
-:white_check_mark: Toast Notifcations. \
-  User is notified by Toasts on sucessfully query or error.
+:white_check_mark: Export Data in CSV or JSON Format. \
+  Empower yourself with the ability to export query results effortlessly. Our application offers a convenient feature that allows you to download your query results in either CSV or JSON format, providing flexibility and compatibility with various data processing tools. Whether you need to share your data with colleagues or import it into other applications, you can easily do so with just a few clicks. This feature enhances your data management capabilities and streamlines your workflow.
+
 
 
 ## ⏱ Page Load Time
