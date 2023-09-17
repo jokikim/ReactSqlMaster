@@ -3,6 +3,7 @@ import { githubDark, githubLight } from '@uiw/codemirror-theme-github'
 import ReactCodeMirror from '@uiw/react-codemirror'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { updateCurrentEditorValue } from '../../redux/appSlice'
 
 const CodeEditor = ({ value, setValue }) => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const CodeEditor = ({ value, setValue }) => {
   const isDarkMode = theme === 'dark' ? true : false;
   const handleQueryChange = (newQuery) => {
     // dispatch(updateValue(newQuery));
+    dispatch(updateCurrentEditorValue(newQuery))
     setValue(newQuery);
   }
 

@@ -66,7 +66,7 @@ const EditorTabs = () => {
           <span className="material-symbols-outlined"><AiOutlinePlus /></span>
         </button>
       </div>
-      <DarkModeToggle />
+      {/* <DarkModeToggle /> */}
     </div>
 
     {/* {

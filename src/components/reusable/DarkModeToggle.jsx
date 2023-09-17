@@ -20,13 +20,13 @@ const DarkModeToggle = () => {
   return (
     <div
       onClick={handleDarkModeToggle}
-      className="flex items-center justify-center select-none cursor-pointer w-[50px] dark:hover:text-slate-100"
+      className="flex items-center justify-center select-none cursor-pointer w-[50px]  rounded-full p-1 border-gray-400 border"
     >
       <span className="material-symbols-outlined">
         {theme === "dark" ? (
-          <HiMoon className="w-6 h-6" />
+          <HiMoon className="w-6 h-6 text-white" />
         ) : (
-          <HiSun className="w-6 h-6" />
+          <HiSun className="w-6 h-6 text-gray-900" />
         )}
       </span>
     </div>

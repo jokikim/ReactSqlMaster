@@ -32,7 +32,6 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
 
   const handlePageChange = (event) => {
     const value = parseInt(event.target.value, 10);
-    // Ensure the entered page number is within the valid range
     if (value >= 1 && value <= totalPages) {
       setCurrentPage(value);
     }
@@ -41,12 +40,11 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
   const handleResultsPerPageChange = (event) => {
     const value = parseInt(event.target.value, 10);
     setResultsPerPage(value);
-    setCurrentPage(1); // Reset the current page when results per page changes
+    setCurrentPage(1); 
   };
 
   
 
-  console.log({data})
   return (
     <>
       {
@@ -66,7 +64,7 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
           />
         )}
 
-        <div className=''>
+        <div>
           <Table 
           tableHeader={tableHeader}
           isLoading={isLoading}

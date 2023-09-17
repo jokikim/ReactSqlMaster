@@ -6,12 +6,13 @@ import useData from '../../hooks/useData';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFullScreen, updateQuery } from '../../redux/appSlice';
 import { runQueryHandler } from '../../redux/appSlice';
+import DarkModeToggle from '../reusable/DarkModeToggle';
 
 const CodeRunner = ({ query, setQuery, value, setValue, handleQueryReset}) => {
 
   const dispatch = useDispatch();
-  // const executableQuery = useSelector((state) => state.app.executableQuery);
-  // const { isLoading } = useData(executableQuery);
+  const executableQuery = useSelector((state) => state.app.executableQuery);
+  const { isLoading } = useData(executableQuery);
   // const query = useSelector((state) => state.app.query);
 
   return (
@@ -42,7 +43,8 @@ const CodeRunner = ({ query, setQuery, value, setValue, handleQueryReset}) => {
           <span className='material-symbols-outlined'><BsAspectRatio /></span>
         </button>
       </div>
-     
+      <DarkModeToggle />
+
     </div>
   )
 }

@@ -17,6 +17,7 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
   const executableQuery = useSelector((state) => state.app.executableQuery);
   const [outputData, setOutputData] = useState(null);
   const { data, runtime, isLoading, splitSize, setSplitSize } = useData(executableQuery);
+  const fullScreen = useSelector((state) => state.app.fullScreen);
 
   useEffect(() => {
     if (initialQuery) {
@@ -51,7 +52,9 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
       />
 
       <Split 
-      className="h-[calc(100vh-109px)] text-slate-600"
+      className={
+        fullScreen ? 'h-[calc(100vh-109px)]' : 'h-[calc(100vh-59px)]'
+      }
       direction="vertical" minSize={0} snapOffset={30} sizes={splitSize}>
         <div className="overflow-auto dark:bg-[#0d1117] text-base">
           <CodeEditor
