@@ -31,21 +31,21 @@ const OutputSummary = ({
             <MdClose  className="w-6 h-6"/>
           </span>
         </button>
-        <span className="mr-4 text-lg bg-slate-700 px-2 py-1 rounded-lg">Total Rows: {rowCount}</span>
-        <span className="mr-4 text-lg bg-slate-700 px-2 py-1 rounded-lg">Execution Time: <span className="text-[#4FC996] font-semibold">{formattedRunTime} s</span></span>
+        <span className="mr-4 text-lg bg-white dark:bg-slate-700 dark:text-slate-200  dark:border-slate-600  border-solid border border-gray-500 px-2 py-1 rounded-lg ">Total Rows: {rowCount}</span>
+        <span className="mr-4 text-lg px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200  dark:border-slate-600  border-solid border border-gray-500">Execution Time: <span className="text-[#4FC996] font-semibold">{formattedRunTime} s</span></span>
         {/* <div className="mr-2 text-lg bg-slate-700 px-2 py-1 rounded-lg"> */}
           {/* <span className="">Results per page: </span> */}
           <select
             value={resultsPerPage}
             onChange={handleResultsPerPageChange}
-            className=" cursor-pointer mr-2 text-lg bg-slate-700 px-2 py-1 rounded-lg"
+            className=" cursor-pointer mr-2 text-lg  px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200  dark:border-slate-600  border-solid border border-gray-500"
           >
             <option value={20}>Show 20</option>
             <option value={50}>Show 50</option>
             <option value={100}>Show100</option>
           </select>
         {/* </div> */}
-        <div className="cursor-pointer mr-2 text-lg bg-slate-700 px-2 py-1 rounded-lg">
+        <div className="cursor-pointer mr-2 text-lg  px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200  dark:border-slate-600  border-solid border border-gray-500">
           <span className="mx-2">Page</span>
           <input
             className="bg-inherit "
@@ -58,15 +58,6 @@ const OutputSummary = ({
           <span>of {totalPages}</span>
 
         </div>
-        {/* <button
-          className="ml-2 flex justify-center items-center select-none cursor-pointer dark:hover:text-slate-100"
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
-        >
-          <span className="material-symbols-outlined">
-            <AiOutlineRightSquare className="w-7 h-7" />
-          </span>
-        </button> */}
       <div className="flex items-center justify-center">
           <button
             className="flex justify-center items-center  select-none cursor-pointer dark:hover:text-slate-100"
@@ -97,7 +88,6 @@ const OutputSummary = ({
         data={data}
         />
       </div>
-      {/* <ExportButton data={csvData} /> */}
     </div>
   );
 };

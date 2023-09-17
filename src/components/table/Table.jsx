@@ -23,10 +23,6 @@ const Table = ({
     );
   }
 
-  // Extract the headers from the first object in the data array
-  // const headers = Object.values(data[0]);
-  // const rowsData = data.slice(1);
-  console.log({data})
   return (
     <table className='dark:text-slate-300 border-collapse border border-hidden text-sm table-auto w-full'>
       <thead>

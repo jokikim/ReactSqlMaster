@@ -19,12 +19,12 @@ const CodeRunner = ({ query }) => {
         <button
           // disabled={!query || isLoading}
           onClick={() => dispatch(runQueryHandler())}
-          className="flex justify-center items-center text-base dark:text-slate-100 dark:bg-purple-900 dark:hover:bg-purple-950 bg-purple-700 hover:bg-purple-800 active:bg-purple-800 rounded-lg text-white px-5 py-2.5 gap-1 disabled:bg-gray-400 dark:disabled:bg-gray-500 disabled:cursor-not-allowed"
+          className="flex justify-center items-center dark:text-slate-100 dark:bg-purple-900 dark:hover:bg-purple-950 bg-purple-700 hover:bg-purple-800 active:bg-purple-800 rounded-lg text-white px-5 py-2.5 gap-1 disabled:bg-gray-400 dark:disabled:bg-gray-500 disabled:cursor-not-allowed"
         >
-          <span className="-ml-2 material-symbols-outlined">
-            <BsPlay />
-          </span>
-          Run Query
+          {/* <span className="-ml-2 material-symbols-outlined"> */}
+            <BsPlay className="-ml-2 w-6 h-6" />
+          {/* </span> */}
+          <span className="text-lg">Run</span>
         </button>
       </div>
       <div className="flex items-center justify-center gap-4">
