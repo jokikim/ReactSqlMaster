@@ -20,7 +20,7 @@ const NavigationMenu = ({ isOpen, setIsOpen }) => {
       
       {fullScreen && (
         // <div className="relative col-start-1 col-end-2 row-start-1 row-end-5 ">
-          <div className="flex flex-col divide-y px-4 dark:bg-slate-800 dark:text-slate-300 bg-gray-50 min-w-[300px] dark:divide-slate-700 max-h-screen overflow-auto">
+          <div className="flex flex-col divide-y px-4 dark:bg-slate-800 dark:text-slate-300 bg-gray-50 min-w-[300px] dark:divide-slate-700 max-h-screen scrollbar-theme overflow-auto">
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               className="text-white m-4 text-2xl cursor-pointer float-right h-8 w-8"

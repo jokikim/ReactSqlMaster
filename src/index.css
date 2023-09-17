@@ -26,3 +26,19 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
   cursor: row-resize;
 }
+
+
+.scrollbar-theme::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-theme::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.scrollbar-theme::-webkit-scrollbar-thumb {
+  background: #9767ff;
+  border-radius: 20px;
+}
+
+.scrollbar-theme::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
