@@ -1,8 +1,10 @@
 import React from "react";
 import { BsPlay, BsAspectRatio } from "react-icons/bs";
+import { HiOutlinePlay } from "react-icons/hi";
+import { MdOutlineSettingsBackupRestore } from "react-icons/md";
 import useData from "../../hooks/useData";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleFullScreen } from "../../redux/appSlice";
+import { toggleFullScreen, updateQuery } from "../../redux/appSlice";
 import { runQueryHandler } from "../../redux/appSlice";
 import DarkModeToggle from "../reusable/DarkModeToggle";
 
@@ -17,7 +19,7 @@ const CodeRunner = ({ query }) => {
         <button
           // disabled={!query || isLoading}
           onClick={() => dispatch(runQueryHandler())}
-          className="flex justify-center items-center text-sm dark:text-slate-100 dark:bg-green-700 dark:hover:bg-green-600 bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg text-white px-5 py-2 gap-1 disabled:bg-gray-400 dark:disabled:bg-gray-500 disabled:cursor-not-allowed"
+          className="flex justify-center items-center text-base dark:text-slate-100 dark:bg-purple-900 dark:hover:bg-purple-950 bg-purple-700 hover:bg-purple-800 active:bg-purple-800 rounded-lg text-white px-5 py-2.5 gap-1 disabled:bg-gray-400 dark:disabled:bg-gray-500 disabled:cursor-not-allowed"
         >
           <span className="-ml-2 material-symbols-outlined">
             <BsPlay />
