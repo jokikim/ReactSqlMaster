@@ -1,6 +1,8 @@
 # 🚀👨‍💻 REACT SQL Editor
 
-This is a REACT SQL Editor built using ReactJs and TailwindCSS.
+## Optimizing Your SQL Query Management Web Application for Enhanced User Experience
+
+React SQL Editor is a sophisticated tool designed for data analysts to execute and manage SQL queries seamlessly. It offers an intuitive interface that allows users to run queries, view results in tabular format, and save frequently used queries for future reference. 
 
 ![Homepage](src/assets/screenshots/screenshot-readme.png)
 
@@ -78,7 +80,7 @@ Page Load time of this website in desktop is in the range of 0.4 s to 0.6s.
 
 I calculated the performance and load time of this website using these two tools Lighthouse Chrome DevTools and BrowserStack SpeedLab.
 
-### [Lighthouse Chrome Report] (got a perfect 💯)
+## 🚀Lighthouse Chrome Report (got a perfect 💯)
 
 ![lighthouse report](src/assets/screenshots/lighthousescore.jpg)
 
