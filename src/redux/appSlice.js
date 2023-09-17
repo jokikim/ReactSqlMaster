@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import throttle from "lodash.throttle";
 const initialState = {
   fullScreen: true,
+  theme: "dark",
   darkMode: true,
   tabCount: 1,
   activeTab: 1,
@@ -25,7 +26,15 @@ const appSlice = createSlice({
       state.fullScreen = !state.fullScreen;
     }, 250),
     toggleDarkMode: throttle((state) => {
-      state.darkMode = !state.darkMode;
+      if (state.theme === "dark") {
+        state.theme = "light";
+        // document.documentElement.classList.add("dark");
+      } else {
+        state.theme = "dark";
+        // document.documentElement.classList.remove("dark");
+      }
+
+      // state.darkMode = !state.darkMode;
     }, 250),
     saveNewQuery: (state, action) => {
       const { queryName, query } = action.payload;

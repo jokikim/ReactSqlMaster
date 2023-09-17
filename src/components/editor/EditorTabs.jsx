@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeActiveTab, addNewTab, removeTab } from '../../redux/appSlice';
 import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 import EditorPanel from './EditorPanel';
+import DarkModeToggle from '../reusable/DarkModeToggle';
 
 
 const EditorTabs = () => {
@@ -65,6 +66,7 @@ const EditorTabs = () => {
           <span className="material-symbols-outlined"><AiOutlinePlus /></span>
         </button>
       </div>
+      <DarkModeToggle />
     </div>
 
     {/* {

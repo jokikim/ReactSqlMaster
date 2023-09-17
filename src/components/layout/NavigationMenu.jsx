@@ -40,7 +40,7 @@ const NavigationMenu = ({ isOpen, setIsOpen }) => {
                 const finalName = convertToNormalString(name);
                 return (
                   <button
-                    className="flex items-center p-2 my-6 transition-colors text-secondary-light hover:text-white hover:bg-primary-dark duration-200 rounded-lg "
+                    className="flex items-center p-2 my-6 transition-colors dark:text-secondary-light hover:text-white dark:hover:text-white text-slate-800 hover:bg-slate-500 dark:hover:bg-primary-dark duration-200 rounded-lg "
                     key={name}
                     onClick={() => {
                       handleQuery(name);
