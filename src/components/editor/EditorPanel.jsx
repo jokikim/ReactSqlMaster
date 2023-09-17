@@ -23,6 +23,8 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
     }
   }, [initialQuery]);
 
+  console.log('csvData', data);
+
   useEffect(() => {
     setOutputData(data);
   }, [data]);
