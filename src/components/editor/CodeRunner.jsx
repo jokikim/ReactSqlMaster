@@ -10,8 +10,8 @@ import DarkModeToggle from "../reusable/DarkModeToggle";
 
 const CodeRunner = ({ query }) => {
   const dispatch = useDispatch();
-  const executableQuery = useSelector((state) => state.app.executableQuery);
-  const { isLoading } = useData(executableQuery);
+  // const executableQuery = useSelector((state) => state.app.executableQuery);
+  // const { isLoading } = useData(executableQuery);
 
   return (
     <div className="bg-gray-50  dark:bg-slate-800 flex justify-between items-center px-4 py-2.5 whitespace-nowrap">

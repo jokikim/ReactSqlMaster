@@ -1,5 +1,4 @@
 import React from "react";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { AiOutlineLeftSquare, AiOutlineRightSquare } from 'react-icons/ai'
 import CsvExportButton from "../reusable/CsvExportButton";
 import JsonExportButton from "../reusable/JsonExportButton";
@@ -19,7 +18,6 @@ const OutputSummary = ({
 }) => {
   const formattedRunTime = (Math.round(parseFloat(runtime) * 100) / 100).toFixed(2);
 
-
   return (
     <div className="sticky top-0 dark:bg-slate-900 dark:text-slate-300 bg-gray-50 px-4 py-4 text-sm flex justify-between gap-4 items-center whitespace-nowrap w-full">
       <div className="flex items-center">
@@ -33,8 +31,6 @@ const OutputSummary = ({
         </button>
         <span className="mr-4 text-lg bg-white dark:bg-slate-700 dark:text-slate-200  dark:border-slate-600  border-solid border border-gray-500 px-2 py-1 rounded-lg ">Total Rows: {rowCount}</span>
         <span className="mr-4 text-lg px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200  dark:border-slate-600  border-solid border border-gray-500">Execution Time: <span className="text-[#4FC996] font-semibold">{formattedRunTime} s</span></span>
-        {/* <div className="mr-2 text-lg bg-slate-700 px-2 py-1 rounded-lg"> */}
-          {/* <span className="">Results per page: </span> */}
           <select
             value={resultsPerPage}
             onChange={handleResultsPerPageChange}
@@ -89,6 +85,8 @@ const OutputSummary = ({
         />
       </div>
     </div>
+
+
   );
 };
 

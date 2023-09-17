@@ -1,22 +1,21 @@
-import debounce from 'lodash.debounce';
-import React from 'react'
-import { BsDownload } from 'react-icons/bs'
-import { exportToJson } from '../../utils/jsonDownload';
+import debounce from "lodash.debounce";
+import React from "react";
+import { BsDownload } from "react-icons/bs";
+import { exportToJson } from "../../utils/jsonDownload";
 
-const JsonExportButton = ({data}) => {
-
-  const debouncedExportCSV = debounce(() =>exportToJson(data), 500);
+const JsonExportButton = ({ data }) => {
+  const debouncedExportJson = debounce(() => exportToJson(data), 500);
   return (
     <button
-    className='flex gap-1.5 justify-center items-center bg-white dark:bg-slate-600 dark:text-slate-100  dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300 border-solid border border-gray-500 rounded-lg px-4 py-1.5 text-base'
-    onClick={debouncedExportCSV}
-  >
-   <div>
-    <BsDownload className='w-5 h-4' />
-   </div>
-    <p>JSON</p>
-  </button>
-  )
-}
+      className="flex gap-1.5 justify-center items-center bg-white dark:bg-slate-600 dark:text-slate-100  dark:border-slate-600 dark:hover:bg-slate-500 hover:bg-gray-200 active:bg-gray-300 border-solid border border-gray-500 rounded-lg px-4 py-1.5 text-base"
+      onClick={debouncedExportJson}
+    >
+      <div>
+        <BsDownload className="w-5 h-4" />
+      </div>
+      <p>JSON</p>
+    </button>
+  );
+};
 
-export default JsonExportButton
+export default JsonExportButton;

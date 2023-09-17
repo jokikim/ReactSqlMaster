@@ -2,14 +2,14 @@ const TABLE_NAMES = [
   "categories",
   "customers",
   "employee_territories",
-  "employees",
   "order_details",
-  "orders",
   "products",
   "regions",
-  "shippers",
   "suppliers",
   "territories",
+  "employees",
+  "shippers",
+  "orders",
 ];
 
 export default TABLE_NAMES;

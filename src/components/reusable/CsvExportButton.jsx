@@ -1,27 +1,11 @@
 import React from 'react'
-import useData from '../../hooks/useData'
-import CsvDownload from 'react-json-to-csv'
 import Papa from 'papaparse';
 import debounce from 'lodash.debounce';
-import { BsDownload, BsUpload } from 'react-icons/bs';
+import { BsDownload } from 'react-icons/bs';
+import { exportCSV } from '../../utils/csvDownload';
 
 const CsvExportButton = ({data}) => {
-
-
-  const exportCSV = () => {
-    const csv = Papa.unparse(data);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'data.csv');
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const debouncedExportCSV = debounce(exportCSV, 500);
+  const debouncedExportCSV = debounce(() => exportCSV(data), 500);
 
   return (
     <button

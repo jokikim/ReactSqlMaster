@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from '../reusable/Loader';
 
 const Table = ({
   tableHeader,
@@ -7,18 +8,20 @@ const Table = ({
   currentPage,
   resultsPerPage,
 }) => {
+
+
   if (isLoading) {
     return (
-      <div className='flex justify-center items-center h-full dark:text-slate-300'>
-        Loading...
+      <div className='flex justify-center mt-20 items-center h-full dark:text-slate-300'>
+         {!data ? 'No data available' : 'Run Query to see Results'}
       </div>
     );
   }
 
   if (!data || data.length === 0) {
     return (
-      <div className='flex justify-center items-center h-full dark:text-slate-300'>
-        {data ? 'No data available' : 'Run Query to see Results'}
+      <div className='flex justify-center mt-20 items-center h-full dark:text-slate-300'>
+        <Loader />
       </div>
     );
   }
