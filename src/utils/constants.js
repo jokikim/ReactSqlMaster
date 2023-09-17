@@ -4,11 +4,11 @@ const TABLE_NAMES = [
   "employee_territories",
   "order_details",
   "products",
-  "regions",
-  "suppliers",
   "territories",
-  "employees",
+  "regions",
   "shippers",
+  "suppliers",
+  "employees",
   "orders",
 ];
 
