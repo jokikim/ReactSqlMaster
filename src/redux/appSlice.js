@@ -1,21 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {
+  createSlice
+} from "@reduxjs/toolkit";
 import throttle from "lodash.throttle";
+
 const initialState = {
-  fullScreen: true,
-  theme: localStorage.getItem('EDITOR_THEME') || "dark",
-  darkMode: true,
-  tabCount: 1,
-  activeTab: 1,
+  theme: localStorage.getItem("EDITOR_THEME") || "dark",
   executableQuery: "",
-  tabs: [
-    {
-      id: 1,
-      title: "Tab 1",
-      queryName: "",
-      query: "select * from customers",
-    },
-  ],
-  savedQueries: JSON.parse(localStorage.getItem("savedQueries")) || {},
+  activeTab: 1,
+  fullScreen: true,
+  tabCount: 1,
+  tabs: [{
+    id: 1,
+    title: "Tab 1",
+    queryName: "",
+    query: "select * from customers",
+  }, ]
 };
 
 const appSlice = createSlice({
@@ -28,67 +27,38 @@ const appSlice = createSlice({
     toggleDarkMode: throttle((state) => {
       if (state.theme === "dark") {
         state.theme = "light";
-        // document.documentElement.classList.add("dark");
       } else {
         state.theme = "dark";
-        // document.documentElement.classList.remove("dark");
       }
-      localStorage.setItem('EDITOR_THEME', state.theme);
-      // state.darkMode = !state.darkMode;
+      localStorage.setItem("EDITOR_THEME", state.theme);
     }, 250),
-    saveNewQuery: (state, action) => {
-      const { queryName, query } = action.payload;
-
-      if (!queryName) {
-        window.alert("Query Name Cannot be Empty");
-        return;
-      }
-      if (!query) {
-        window.alert("Query Cannot be Empty");
-        return;
-      }
-
-      const alreadyExists = queryName in state.savedQueries;
-      const newSavedQueries = { ...state.savedQueries, [queryName]: query };
-      localStorage.setItem("savedQueries", JSON.stringify(newSavedQueries));
-      window.alert(
-        `${alreadyExists ? "Updated" : "Saved"} "${queryName}" Query!`
-      );
-
-      state.savedQueries = newSavedQueries;
-    },
-    deleteSavedQuery: (state, action) => {
-      const queryName = action.payload;
-      const { [queryName]: _, ...remainingQueries } = state.savedQueries;
-      localStorage.setItem("savedQueries", JSON.stringify(remainingQueries));
-      state.savedQueries = remainingQueries;
-    },
     increaseTabCount: (state) => {
-      state.tabCount += 1;
+      state.tabCount = (prevState) => prevState + 1;
     },
+
     changeActiveTab: (state, action) => {
       state.activeTab = action.payload;
     },
     addNewTab: (state) => {
-      // const { queryName = "", query = "" } = action.payload;
-      let queryName = "";
-      let query = "";
       if (state.tabs.length >= 15) {
         window.alert("Max Tab Limit Reached!!!");
         return;
       }
+
       const newTabId = state.tabCount + 1;
       const newTabTitle = `Tab ${newTabId}`;
       const newTabData = {
         id: newTabId,
         title: newTabTitle,
-        queryName: queryName,
-        query: query,
+        queryName: "",
+        query: "",
       };
+
       state.tabCount += 1;
       state.activeTab = newTabId;
       state.tabs.push(newTabData);
     },
+
     removeTab: (state, action) => {
       const tabId = action.payload;
       let newActiveTabId = null;
@@ -125,9 +95,7 @@ const appSlice = createSlice({
       let Z = currentQuery
         .toLowerCase()
         .slice(currentQuery.indexOf("from") + "from".length);
-      // dispatch(updateQuery(Z.split(" ")[1]));
       state.executableQuery = Z.split(" ")[1];
-      // setQuery(Z.split(" ")[1]);
     },
   },
 });
@@ -135,8 +103,6 @@ const appSlice = createSlice({
 export const {
   toggleFullScreen,
   toggleDarkMode,
-  updateQuery,
-  updateValue,
   changeActiveTab,
   addNewTab,
   removeTab,

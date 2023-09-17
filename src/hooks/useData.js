@@ -55,9 +55,9 @@ const useData = (tableName) => {
         toast.error("Please enter a valid query");
       }
     };
-    let t0 = performance.now(); //start time
+    let t0 = performance.now(); 
     fetchData(tableName);
-    let t1 = performance.now(); //end time
+    let t1 = performance.now(); 
     setRuntime(t1 - t0);
   }, [tableName]);
 
