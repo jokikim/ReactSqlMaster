@@ -1,5 +1,4 @@
 import React from 'react';
-import Papa from 'papaparse';
 import debounce from 'lodash.debounce';
 import { BsDownload } from 'react-icons/bs';
 import { exportCSV } from '../../utils/csvDownload';

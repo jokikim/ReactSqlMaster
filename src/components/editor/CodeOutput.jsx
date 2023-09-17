@@ -43,7 +43,6 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
   };
 
   
-
   return (
     <>
       {
