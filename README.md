@@ -89,9 +89,9 @@ I calculated the performance and load time of this website using these two tools
 - **Largest Contentful Paint** marks the time at which the largest text or image is painted.
 - **Cumulative Layout Shift** measures the movement of visible elements within the viewport.
 
-### [BrowserStack Report](https://www.browserstack.com/speedlab)
+### [Lighthouse Report](src/assets/screenshots/lighthousescore.jpg)
 
-![browserstack report](src/assets/screenshots/screenshot-three.png)
+![Lighthouse Report](src/assets/screenshots/lighthousemetrics.jpg)
 
 ## 🪜 Steps I took to optimize the page load time
 
