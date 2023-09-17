@@ -14,7 +14,7 @@ const CodeRunner = ({ query }) => {
   const { isLoading } = useData(executableQuery);
 
   return (
-    <div className="bg-gray-50 dark:bg-slate-800 flex justify-between items-center px-4 py-2 whitespace-nowrap">
+    <div className="bg-gray-50  dark:bg-slate-800 flex justify-between items-center px-4 py-2.5 whitespace-nowrap">
       <div className="flex gap-x-4">
         <button
           // disabled={!query || isLoading}

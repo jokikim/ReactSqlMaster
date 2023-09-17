@@ -1,5 +1,7 @@
 import React from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import CsvExportButton from "../reusable/CsvExportButton";
+import JsonExportButton from "../reusable/JsonExportButton";
 const OutputSummary = ({
   rowCount,
   runtime,
@@ -16,7 +18,7 @@ const OutputSummary = ({
   const formattedRunTime = (runtime / 1000).toFixed(2);
 
   return (
-    <div className="sticky top-0 dark:bg-slate-800 dark:text-slate-300 bg-gray-50 px-4 py-2 text-sm flex justify-between gap-4 items-center whitespace-nowrap w-full">
+    <div className="sticky top-0 dark:bg-slate-800 dark:text-slate-300 bg-gray-50 px-4 py-4 text-sm flex justify-between gap-4 items-center whitespace-nowrap w-full">
       <div className="flex items-center">
         <button className="mr-4 flex justify-center items-center text-gray-400 hover:text-gray-600 dark:hover:text-slate-100">
           <span
@@ -67,6 +69,14 @@ const OutputSummary = ({
             <BsArrowRight />
           </span>
         </button>
+      </div>
+      <div className="flex items-center justify-center gap-2">
+        <CsvExportButton
+        data={data}
+        />
+        <JsonExportButton 
+        data={data}
+        />
       </div>
       {/* <ExportButton data={csvData} /> */}
     </div>

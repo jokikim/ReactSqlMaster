@@ -27,14 +27,14 @@ const EditorTabs = () => {
     <div
       className={`${
         fullScreen ? "" : "hidden"
-      } flex justify-between divide-y dark:bg-gray-900 dark:text-slate-300`}
+      } flex justify-between divide-y dark:bg-gray-900 dark:text-slate-300 h-12`}
     >
       <div className="flex gap-x-1">
         <div className="flex overflow-auto">
           {tabs.map((tab) => (
             <div
               key={tab.id}
-              className={`hover:border-b-blue-500 dark:hover:border-b-blue-400 mr-1 flex justify-center items-center whitespace-nowrap px-4 cursor-pointer ${
+              className={`hover:border-b-blue-500 dark:hover:border-b-blue-400 mr-1 flex justify-center items-center whitespace-nowrap px-5 cursor-pointer ${
                 activeTab === tab.id
                   ? "bg-white-100 border-b-2 border-b-blue-500"
                   : "bg-gray-200 dark:border-slate-800 border-b-2 dark:bg-slate-800 "
@@ -59,7 +59,7 @@ const EditorTabs = () => {
           className="min-w-[50px] h-[50px] bg-gray-200 text-blue-600 dark:bg-slate-800 flex items-center justify-center hover:bg-gray-300 dark:hover:bg-slate-700 dark:text-blue-400"
           onClick={handleAddNewTab} 
         >
-          <span className="material-symbols-outlined"><AiOutlinePlus /></span>
+         <AiOutlinePlus className='w-6 h-6' />
         </button>
       </div>
     </div>
