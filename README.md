@@ -2,7 +2,7 @@
 
 ## ⚡Enhancing Your SQL Query Management Web Application for an Exceptional User Experience
 ## ⚡Powered by `React`, `Redux Toolkit`, and `TailwindCSS`
-React SQL Editor is an advanced tool meticulously crafted for data analysts, enabling them to seamlessly execute and manage SQL queries. It presents an intuitive interface, empowering users to run queries, visualize results in a tabular format, and save frequently used queries for future reference.
+ReactSqlMaster is an advanced tool meticulously crafted for data analysts, enabling them to seamlessly execute and manage SQL queries. It presents an intuitive interface, empowering users to run queries, visualize results in a tabular format, and save frequently used queries for future reference.
 
 ![Homepage](src/assets/screenshots//sqlhomepage.jpg)
 
