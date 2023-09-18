@@ -1,6 +1,5 @@
 import React from 'react';
 import Loader from '../reusable/Loader';
-import { useSelector } from 'react-redux';
 
 const Table = ({
   tableHeader,

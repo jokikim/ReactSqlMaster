@@ -93,11 +93,15 @@ const appSlice = createSlice({
         (tab) => tab.id.toString() === state.activeTab.toString()
       );
       const currentQuery = state.tabs[currentTab].query;
-      let Z = currentQuery
-        .toLowerCase()
-        .slice(currentQuery.indexOf("from") + "from".length);
-      state.executableQuery = Z.split(" ")[1];
+      let query = currentQuery.toLowerCase();
+    
+      if (query.endsWith(';')) {
+        query = query.slice(0, -1);
+      }
+      const words = query.split(' ');
+      state.executableQuery = words[words.length - 1];
     },
+    
     updateCurrentEditorResults: (state, action) => {
       const results = action.payload;
       const currentTab = state.tabs.findIndex(

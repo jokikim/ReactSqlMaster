@@ -12,11 +12,7 @@ ReactSqlMaster is an advanced tool meticulously crafted for data analysts, enabl
 <img src="https://img.shields.io/website?url=https://www.codingspace.codes&logo=github&style=flat-square" />
 </a>
 
-<<<<<<< HEAD
-Try out the website : [ReactSqlMaster](https://reactsqlmaster.vercel.app/)
-=======
 Explore the website: [ReactSqlMaster](https://reactsqlmaster.vercel.app/)
->>>>>>> 72999c1ed86da21302be5bd932e24bf6ec4d7c35
 
 ## 👨‍🔧 Tech Stack
 
@@ -25,12 +21,8 @@ Explore the website: [ReactSqlMaster](https://reactsqlmaster.vercel.app/)
 
 ## 👨‍💻 Features
 
-<<<<<<< HEAD
-:white_check_mark: Efficient GitHub Data Retrieval .\
-=======
 :white_check_mark: **Efficient GitHub Data Retrieval**\
 Our app swiftly fetches CSV data from GitHub, offering you the latest information without storing it locally. Enjoy real-time data access and enhanced security.
->>>>>>> 72999c1ed86da21302be5bd932e24bf6ec4d7c35
 
 :white_check_mark: **SQL Query Execution in Editor**
 
