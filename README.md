@@ -8,7 +8,7 @@ ReactSqlMaster is an advanced tool meticulously crafted for data analysts, enabl
 
 ## 👨‍💻 Demo
 
-<a href="https://github.com/rishipurwar1/coding-space" target="blank">
+<a href="https://reactsqlmaster.vercel.app/" target="blank">
 <img src="https://img.shields.io/website?url=https://www.codingspace.codes&logo=github&style=flat-square" />
 </a>
 
