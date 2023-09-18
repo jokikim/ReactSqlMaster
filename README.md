@@ -24,11 +24,6 @@ Explore the website: [ReactSqlMaster](https://reactsqlmaster.vercel.app/)
 :white_check_mark: **Efficient GitHub Data Retrieval**\
 Our app swiftly fetches CSV data from GitHub, offering you the latest information without storing it locally. Enjoy real-time data access and enhanced security.
 
-:white_check_mark: **Code Editor Tabs**\
-Our application utilizes a tab-based system for managing multiple SQL queries effortlessly. Each tab serves as a dedicated workspace, housing a query editor and displaying results.
-
-*Note:* To ensure optimal performance, we limit the number of tabs to 15. This restriction prevents clutter and maintains a user-friendly experience, with timely notifications when the limit is reached.
-
 :white_check_mark: **SQL Query Execution in Editor**
 
 1. Users can seamlessly execute SQL queries using our editor.
@@ -44,6 +39,11 @@ Our application utilizes a tab-based system for managing multiple SQL queries ef
    - `select * from shippers`
    - `select * from suppliers`
    - `select * from territories`
+
+:white_check_mark: **Code Editor Tabs**\
+Our application utilizes a tab-based system for managing multiple SQL queries effortlessly. Each tab serves as a dedicated workspace, housing a query editor and displaying results.
+
+*Note:* To ensure optimal performance, we limit the number of tabs to 15. This restriction prevents clutter and maintains a user-friendly experience, with timely notifications when the limit is reached.
 
 :white_check_mark: **Dark Mode and Theme Persistence**\
 Customize your experience with the flexibility to switch between Dark Mode and Light Mode. Your chosen theme is intelligently saved in Local Storage, ensuring your preferred mode is maintained across sessions. Enjoy a visually tailored environment that suits your preference every time you return.
