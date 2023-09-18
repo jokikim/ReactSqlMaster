@@ -29,7 +29,8 @@ Our application utilizes a tab-based system for managing multiple SQL queries ef
 
 *Note:* To ensure optimal performance, we limit the number of tabs to 15. This restriction prevents clutter and maintains a user-friendly experience, with timely notifications when the limit is reached.
 
-:white_check_mark: **SQL Query Execution in Editor**\
+:white_check_mark: **SQL Query Execution in Editor**
+
 1. Users can seamlessly execute SQL queries using our editor.
 2. We provide predefined queries for convenience:
    
