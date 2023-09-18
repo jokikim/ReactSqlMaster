@@ -8,6 +8,7 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
   const [tableHeader, setTableHeader] = useState(null);
   const totalPages = data ? Math.ceil(data.length / resultsPerPage) : 0;
   
+  
   useEffect(() => {
     if (data && data.length > 0) {
       setTableHeader(Object.values(data[0]));

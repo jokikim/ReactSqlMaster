@@ -12,8 +12,8 @@ const Table = ({
 
   if (isLoading) {
     return (
-      <div className='flex justify-center mt-20 items-center h-full dark:text-slate-300'>
-        {!data ? 'No data available' : 'Run Query to see Results'}
+      <div className='flex justify-center mt-20 items-center h-full text-2xl font-semibold dark:text-slate-300'>
+        {!data ? 'No data available' : 'Run Query to see Results👨‍💻'}
       </div>
     );
   }
@@ -26,7 +26,6 @@ const Table = ({
     );
   }
 
-  console.log({data})
 
   return (
     <table className='dark:text-slate-300 border-collapse border border-hidden text-sm table-auto w-full'>

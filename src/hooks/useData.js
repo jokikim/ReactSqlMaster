@@ -49,7 +49,7 @@ const useData = (tableName) => {
             toast.error(error.message);
           });
           setIsLoading(false);
-          setSplitSize([40, 60]);
+          setSplitSize([55, 45]);
       } else {
         setError(true);
         toast.error("Please enter a valid query");

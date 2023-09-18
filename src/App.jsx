@@ -1,7 +1,5 @@
 import { useState } from "react"
 import NavigationMenu from "./components/layout/NavigationMenu";
-import EditorTabs from "./components/editor/EditorTabs";
-import { useSelector } from "react-redux";
 import Editor from "./components/editor/Editor";
 
 function App() {
