@@ -2,21 +2,22 @@ import React, { useEffect, useState } from "react";
 import CodeRunner from "./CodeRunner";
 import Split from "react-split";
 import CodeEditor from "./CodeEditor";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CodeOutput from "./CodeOutput";
 import useData from "../../hooks/useData";
+import { updateCurrentEditorResults } from "../../redux/appSlice";
 
-const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
+const EditorPanel = ({ tabId, initialQueryName, initialQuery, queryResults }) => {
   const activeTab = useSelector((state) => state.app.activeTab);
   const [query, setQuery] = useState(initialQueryName);
   const [value, setValue] = useState(initialQuery);
   const executableQuery = useSelector((state) => state.app.executableQuery);
-  const [outputData, setOutputData] = useState(null);
+  const [outputData, setOutputData] = useState(queryResults);
   const { data, runtime, isLoading, splitSize, setSplitSize } =
     useData(executableQuery);
   const fullScreen = useSelector((state) => state.app.fullScreen);
   const isActiveTab = tabId === activeTab;
-
+  const dispatch = useDispatch();
   useEffect(() => {
     if (initialQuery) {
       setValue(initialQuery);
@@ -25,6 +26,9 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
 
   useEffect(() => {
     setOutputData(data);
+    if(data) {
+      dispatch(updateCurrentEditorResults(data))
+    }
   }, [data]);
 
   return (

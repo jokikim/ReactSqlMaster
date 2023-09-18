@@ -1,10 +1,10 @@
-# 🚀👨‍💻 REACT SQL Editor
+# 🚀👨‍💻 ReactSqlMaster
 
 ### ⚡Optimizing Your SQL Query Management Web Application for Enhanced User Experience
 ### ⚡Built using `React`, `Redux Toolkit` & `TailwindCSS`
 React SQL Editor is a sophisticated tool designed for data analysts to execute and manage SQL queries seamlessly. It offers an intuitive interface that allows users to run queries, view results in tabular format, and save frequently used queries for future reference. 
 
-![Homepage](src/assets/screenshots/sqlhomepage.png)
+![Homepage](src/assets/screenshots//sqlhomepage.jpg)
 
 ## 👨‍💻 Demo
 
@@ -12,7 +12,7 @@ React SQL Editor is a sophisticated tool designed for data analysts to execute a
 <img src="https://img.shields.io/website?url=https://www.codingspace.codes&logo=github&style=flat-square" />
 </a>
 
-Try out the website : [REACT SQL Editor](https://reactsqlmaster.vercel.app/)
+Try out the website : [ReactSqlMaster](https://reactsqlmaster.vercel.app/)
 
 ## 👨‍🔧 Tech Stack
 
@@ -21,7 +21,7 @@ Try out the website : [REACT SQL Editor](https://reactsqlmaster.vercel.app/)
 
 ## 👨‍💻 Features
 
-:white_check_mark: Efficient GitHub Data Retrieval \
+:white_check_mark: Efficient GitHub Data Retrieval .\
 
   Our app swiftly fetches CSV data from GitHub, offering you the latest information without storing it locally. Enjoy real-time data access and enhanced security.
 

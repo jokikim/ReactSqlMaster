@@ -8,7 +8,7 @@ const CodeRunner = ({value}) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-gray-50  dark:bg-slate-800 flex justify-between items-center px-4 py-2.5 whitespace-nowrap">
+    <div className="bg-gray-100  dark:bg-slate-800 flex justify-between items-center px-4 py-2.5 whitespace-nowrap">
       <div className="flex gap-x-4">
         <button
           disabled={!value}

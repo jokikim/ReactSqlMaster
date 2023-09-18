@@ -18,6 +18,7 @@ const Editor = () => {
             tabId={tab.id}
             initialQueryName={tab.queryName}
             initialQuery={tab.query}
+            queryResults={tab.queryResults}
           />
         ))}
       </div>

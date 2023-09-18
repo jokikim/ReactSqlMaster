@@ -14,6 +14,7 @@ const initialState = {
     title: "Tab 1",
     queryName: "",
     query: "select * from customers",
+    queryResults: [],
   }, ]
 };
 
@@ -97,6 +98,13 @@ const appSlice = createSlice({
         .slice(currentQuery.indexOf("from") + "from".length);
       state.executableQuery = Z.split(" ")[1];
     },
+    updateCurrentEditorResults: (state, action) => {
+      const results = action.payload;
+      const currentTab = state.tabs.findIndex(
+        (tab) => tab.id.toString() === state.activeTab.toString()
+      );
+      state.tabs[currentTab].queryResults = results;
+    }
   },
 });
 
@@ -108,5 +116,6 @@ export const {
   removeTab,
   updateCurrentEditorValue,
   runQueryHandler,
+  updateCurrentEditorResults
 } = appSlice.actions;
 export default appSlice.reducer;
