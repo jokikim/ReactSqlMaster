@@ -101,6 +101,10 @@ I calculated the performance and load time of this website using two tools: Ligh
 - Used Lighthouse DevTools Extension to find the performance issues and fix them using their actionable suggestion.
 - Used vercel to deploy this website to leverage its Vercel Edge Network compression that results in the better performance.
 
+## 🎥Video Demo
+
+https://github.com/JatinSingh08/ReactSqlMaster/assets/97881261/c1f5cccf-6a00-499d-bf25-52626670235c
+
 ## Available Scripts
 
 In the project directory, you can run:
