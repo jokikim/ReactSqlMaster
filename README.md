@@ -66,6 +66,9 @@ Explore the details of your tables effortlessly. Our user-friendly interface pro
 :white_check_mark: **Informative Toast Notifications**\
 Stay informed at every step of your query execution. Our application keeps you in the loop with informative toast notifications. Whether your query runs successfully or encounters an error, you'll receive timely and clear notifications, ensuring that you're always aware of the status of your queries. These toast notifications are designed to enhance your user experience, providing valuable feedback and keeping you updated on the progress of your tasks.
 
+:white_check_mark: **Error Handling and Feedback**\
+The app delivers concise and informative error messages and alerts. These notifications keep users informed about issues like empty blank queries, or closing the last active tab, enhancing the overall user experience.
+
 :white_check_mark: **Export Data in CSV or JSON Format**\
 Empower yourself with the ability to export query results effortlessly. Our application offers a convenient feature that allows you to download your query results in either CSV or JSON format, providing flexibility and compatibility with various data processing tools. Whether you need to share your data with colleagues or import it into other applications, you can easily do so with just a few clicks. This feature enhances your data management capabilities and streamlines your workflow.
 
