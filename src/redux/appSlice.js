@@ -13,7 +13,7 @@ const initialState = {
     id: 1,
     title: "Tab 1",
     queryName: "",
-    query: "select * from customers",
+    query: "select * from customers;",
     queryResults: [],
   }, ]
 };

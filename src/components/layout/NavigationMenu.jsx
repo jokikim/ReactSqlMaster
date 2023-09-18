@@ -9,7 +9,7 @@ const NavigationMenu = ({ isOpen, setIsOpen }) => {
   const fullScreen = useSelector((state) => state.app.fullScreen);
 
   const handleQuery = (queryName) => {
-    dispatch(updateCurrentEditorValue(`select * from ${queryName}`));
+    dispatch(updateCurrentEditorValue(`select * from ${queryName};`));
     setIsOpen(!isOpen);
   };
 
