@@ -38,7 +38,7 @@ const EditorPanel = ({ tabId, initialQueryName, initialQuery }) => {
 
       <Split
         className={
-          fullScreen ? "h-[calc(100vh-118px)]" : "h-[calc(100vh-59px)]"
+          fullScreen ? "h-[calc(100vh-118px)]" : "h-[calc(100vh-68px)]"
         }
         direction="vertical"
         minSize={0}
