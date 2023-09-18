@@ -8,11 +8,12 @@ ReactSqlMaster is an advanced tool meticulously crafted for data analysts, enabl
 
 ## 👨‍💻 Demo
 
-<a href="https://github.com/rishipurwar1/coding-space" target="blank">
+<a href="https://reactsqlmaster.vercel.app/" target="blank">
 <img src="https://img.shields.io/website?url=https://www.codingspace.codes&logo=github&style=flat-square" />
 </a>
 
-Explore the website: [ReactSqlMaster](https://reactsqlmaster.vercel.app/)
+Try out the website : [ReactSqlMaster](https://reactsqlmaster.vercel.app/)
+
 
 ## 👨‍🔧 Tech Stack
 
@@ -40,6 +41,8 @@ Our app swiftly fetches CSV data from GitHub, offering you the latest informatio
    - `select * from suppliers`
    - `select * from territories`
 
+*Note:* You can find the csv data at this [GitHub repository](https://github.com/graphql-compose/graphql-compose-examples/tree/master/examples/northwind/data/csv). The app fetches data from this github repo to simulate real database queries and display the results in the query results panel.
+
 :white_check_mark: **Code Editor Tabs**\
 Our application utilizes a tab-based system for managing multiple SQL queries effortlessly. Each tab serves as a dedicated workspace, housing a query editor and displaying results.
 
@@ -52,7 +55,7 @@ Customize your experience with the flexibility to switch between Dark Mode and L
 Experience a distraction-free workspace by effortlessly switching to a full-screen view of the editor with a single click.
 
 :white_check_mark: **Split View for Enhanced Productivity**\
-Elevate your workflow with the dynamic split view feature. Seamlessly examine your SQL code in the Code Editor alongside real-time query results. This intuitive split window allows you to effortlessly drag the divider vertically, adapting the view to your precise needs. Experience unparalleled convenience as you edit and observe outcomes in a synchronized manner, boosting your productivity.
+Elevate your workflow with the dynamic split view feature built using `react-split`. Seamlessly examine your SQL code in the Code Editor alongside real-time query results. This intuitive split window allows you to effortlessly drag the divider vertically, adapting the view to your precise needs. Experience unparalleled convenience as you edit and observe outcomes in a synchronized manner, boosting your productivity.
 
 :white_check_mark: **Query Execution Time Insight**\
 Gain valuable insights into query performance with our execution time feature. Track the precise duration it takes for your SQL query to run and fetch results. This real-time feedback empowers you to optimize and fine-tune your queries for efficiency and speed. Stay in control of your data analysis process by monitoring execution times at a glance.
@@ -62,6 +65,9 @@ Explore the details of your tables effortlessly. Our user-friendly interface pro
 
 :white_check_mark: **Informative Toast Notifications**\
 Stay informed at every step of your query execution. Our application keeps you in the loop with informative toast notifications. Whether your query runs successfully or encounters an error, you'll receive timely and clear notifications, ensuring that you're always aware of the status of your queries. These toast notifications are designed to enhance your user experience, providing valuable feedback and keeping you updated on the progress of your tasks.
+
+:white_check_mark: **Error Handling and Feedback**\
+The app delivers concise and informative error messages and alerts. These notifications keep users informed about issues like empty blank queries, or closing the last active tab, enhancing the overall user experience.
 
 :white_check_mark: **Export Data in CSV or JSON Format**\
 Empower yourself with the ability to export query results effortlessly. Our application offers a convenient feature that allows you to download your query results in either CSV or JSON format, providing flexibility and compatibility with various data processing tools. Whether you need to share your data with colleagues or import it into other applications, you can easily do so with just a few clicks. This feature enhances your data management capabilities and streamlines your workflow.
