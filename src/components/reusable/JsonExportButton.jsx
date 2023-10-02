@@ -4,6 +4,7 @@ import { BsDownload } from "react-icons/bs";
 import { exportToJson } from "../../utils/jsonDownload";
 
 const JsonExportButton = ({ data }) => {
+  
   const handleExportJson = debounce(() => {
     exportToJson(data);
   }, 500);

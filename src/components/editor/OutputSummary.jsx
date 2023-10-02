@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import {
   AiOutlineLeftSquare,
   AiOutlineRightSquare,
@@ -7,7 +7,7 @@ import CsvExportButton from "../reusable/CsvExportButton";
 import JsonExportButton from "../reusable/JsonExportButton";
 import { MdClose } from "react-icons/md";
 
-const OutputSummary = ({
+const OutputSummary = memo(function OutputSummary({
   rowCount,
   runtime,
   handleResultsPerPageChange,
@@ -19,7 +19,7 @@ const OutputSummary = ({
   data,
   setSplitSize,
   resultsPerPage,
-}) => {
+}) {
   const formattedRunTime = (Math.round(parseFloat(runtime) * 100) / 100).toFixed(2);
 
   const addClasses = (condition, classNames) => {
@@ -98,6 +98,6 @@ const OutputSummary = ({
       </div>
     </div>
   );
-};
+});
 
 export default OutputSummary;

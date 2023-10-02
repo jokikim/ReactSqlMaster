@@ -4,13 +4,12 @@ import { convertToNormalString } from '../../utils/utilFunctions';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateCurrentEditorValue } from '../../redux/appSlice';
 
-const NavigationMenu = ({ isOpen, setIsOpen }) => {
+const NavigationMenu = () => {
   const dispatch = useDispatch();
   const fullScreen = useSelector((state) => state.app.fullScreen);
 
   const handleQuery = (queryName) => {
     dispatch(updateCurrentEditorValue(`select * from ${queryName};`));
-    setIsOpen(!isOpen);
   };
 
   return fullScreen && (

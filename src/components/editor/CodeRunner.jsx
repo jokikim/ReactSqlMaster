@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { BsAspectRatio, BsPlay } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { runQueryHandler, toggleFullScreen } from "../../redux/appSlice";
 import DarkModeToggle from "../reusable/DarkModeToggle";
 
-const CodeRunner = ({value}) => {
+const CodeRunner = memo(function CodeRunner({value}) {
   const dispatch = useDispatch();
 
   return (
@@ -32,6 +32,6 @@ const CodeRunner = ({value}) => {
       </div>
     </div>
   );
-};
+});
 
 export default CodeRunner;

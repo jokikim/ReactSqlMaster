@@ -15,7 +15,7 @@ const initialState = {
     queryName: "",
     query: "select * from customers;",
     queryResults: [],
-  }, ]
+  }]
 };
 
 const appSlice = createSlice({

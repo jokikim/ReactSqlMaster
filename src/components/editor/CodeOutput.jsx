@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import OutputSummary from './OutputSummary';
 import Table from '../table/Table';
 
-const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
+const CodeOutput = memo(function CodeOutput({ isLoading, setSplitSize, data, runtime }) {
   const [resultsPerPage, setResultsPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
   const [tableHeader, setTableHeader] = useState(null);
@@ -18,6 +18,7 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
   }, [data]);
   
   const currentResults = data ? data.slice(1).slice((currentPage - 1) * resultsPerPage, currentPage * resultsPerPage) : null;
+  
   useEffect(() => {
     setCurrentPage(1);
   } ,[data])
@@ -27,7 +28,7 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
   }
 
   const handleNextPage = () => {
-    if(currentPage < totalPages) setCurrentPage(prev => prev + 1);;
+    if(currentPage < totalPages) setCurrentPage(prev => prev + 1);
   }
 
   const handlePageChange = (event) => {
@@ -74,6 +75,6 @@ const CodeOutput = ({ isLoading, setSplitSize, data, runtime }) => {
         </div>
     </>
   )
-}
+})
 
 export default CodeOutput

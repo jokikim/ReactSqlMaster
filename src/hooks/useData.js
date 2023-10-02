@@ -18,10 +18,9 @@ const useData = (tableName) => {
       .promise("SELECT * FROM CSV(?, {headers: false, separator:','})", [data])
       .then((data) => {
         setData(data);
-        toast.success("Query run successfully");
       })
       .catch((e) => {
-        toast.error(e.message);
+        console.log(e.message);
       });
   };
 
@@ -52,8 +51,8 @@ const useData = (tableName) => {
           setSplitSize([55, 45]);
       } else {
         setError(true);
-        toast.error("Please enter a valid query");
       }
+      
     };
     let t0 = performance.now(); 
     fetchData(tableName);
