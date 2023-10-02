@@ -72,6 +72,18 @@ The app delivers concise and informative error messages and alerts. These notifi
 :white_check_mark: **Export Data in CSV or JSON Format**\
 Empower yourself with the ability to export query results effortlessly. Our application offers a convenient feature that allows you to download your query results in either CSV or JSON format, providing flexibility and compatibility with various data processing tools. Whether you need to share your data with colleagues or import it into other applications, you can easily do so with just a few clicks. This feature enhances your data management capabilities and streamlines your workflow.
 
+## JavaScript Framework and Major Packages
+
+- **React**: A popular front-end JavaScript library for building user interfaces.
+- **Redux Toolkit**: A state management library for managing the application's state.
+- **react-codemirror**: A React wrapper for CodeMirror, providing a customizable code editor with syntax highlighting and SQL suggestions.
+- **alasql**: A powerful library for processing CSV data.
+- **lodash.throttle**: A function provided by lodash that creates a throttled version of a given function, allowing the execution of the function at a specified interval, reducing the number of times the function is called.
+- **lodash.debounce**: A function provided by lodash that creates a debounced version of a given function, ensuring that the function is called only after a specified delay has passed since the last invocation, effectively preventing the function from being invoked multiple times in quick succession.
+- **Tailwind CSS**: A utility-first CSS framework for building responsive designs & beautiful UI.
+- **react-split**: A resizable and customizable split layout component for React, enabling the implementation of split views and panes in the application.
+
+
 ## ⏱ Page Load Time
 
 The page load time for this website on desktop ranges from 0.4 seconds to 0.6 seconds.
@@ -100,6 +112,9 @@ I calculated the performance and load time of this website using two tools: Ligh
 - Used `React.Memo()` to optimize the render performance of functional components.
 - Used Lighthouse DevTools Extension to find the performance issues and fix them using their actionable suggestion.
 - Used vercel to deploy this website to leverage its Vercel Edge Network compression that results in the better performance.
+- `Pagination for Query Results:` Implemented pagination for query results to avoid rendering a large number of table rows at once. This improves page load and rendering performance by displaying only a limited number of rows at a time.
+- `Debounced and Throttled Function Calls:` Implemented debouncing and throttling mechanisms for better performance. For example, when exporting data to CSV, debouncing ensures the export function is called only once within a specified time, preventing unnecessary repeated calls. Similarly, throttling is used when adding new tabs to limit the frequency, ensuring a smoother user experience and preventing excessive tab creations.
+
 
 ## 🎥Video Demo
 
