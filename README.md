@@ -78,6 +78,7 @@ Empower yourself with the ability to export query results effortlessly. Our appl
 - **Redux Toolkit**: A state management library for managing the application's state.
 - **react-codemirror**: A React wrapper for CodeMirror, providing a customizable code editor with syntax highlighting and SQL suggestions.
 - **alasql**: A powerful library for processing CSV data.
+- **react-json-to-csv**: A library to convert json to csv for exporting the data in CSV format.
 - **lodash.throttle**: A function provided by lodash that creates a throttled version of a given function, allowing the execution of the function at a specified interval, reducing the number of times the function is called.
 - **lodash.debounce**: A function provided by lodash that creates a debounced version of a given function, ensuring that the function is called only after a specified delay has passed since the last invocation, effectively preventing the function from being invoked multiple times in quick succession.
 - **Tailwind CSS**: A utility-first CSS framework for building responsive designs & beautiful UI.
