@@ -63,18 +63,21 @@ const appSlice = createSlice({
     removeTab: (state, action) => {
       const tabId = action.payload;
       let newActiveTabId = null;
-      state.tabs = state.tabs.filter((tab) => {
-        if (tab.id !== tabId) {
-          return true;
-        } else {
-          const currentIndex = state.tabs.findIndex((tab) => tab.id === tabId);
-          const prevTab = state.tabs[currentIndex - 1];
-          const nextTab = state.tabs[currentIndex + 1];
-          newActiveTabId = prevTab ? prevTab.id : nextTab ? nextTab.id : null;
-          return false;
-        }
-      });
-      if (newActiveTabId === null) {
+      if(state.tabs.length > 1) {
+        state.tabs = state.tabs.filter((tab) => {
+          if (tab.id !== tabId) {
+            return true;
+          } else {
+            const currentIndex = state.tabs.findIndex((tab) => tab.id === tabId);
+            const prevTab = state.tabs[currentIndex - 1];
+            const nextTab = state.tabs[currentIndex + 1];
+            newActiveTabId = prevTab ? prevTab.id : nextTab ? nextTab.id : null;
+            return false;
+          }
+        });
+
+      } else {
+
         window.alert("There must be one active Tab!");
         return;
       }
