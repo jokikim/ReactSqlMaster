@@ -10,10 +10,11 @@ const EditorPanel = memo(function EditorPanel({ tabId, initialQueryName, initial
   const activeTab = useSelector((state) => state.app.activeTab);
   const [query, setQuery] = useState(initialQueryName);
   const [value, setValue] = useState(initialQuery);
-  const executableQuery = useSelector((state) => state.app.executableQuery);
+  const [tableName, setTableName] = useState('');
+  // const executableQuery = useSelector((state) => state.app.executableQuery);
   const [outputData, setOutputData] = useState(null);
   const { data, runtime, isLoading, splitSize, setSplitSize } =
-    useData(executableQuery);
+    useData(tableName);
   const fullScreen = useSelector((state) => state.app.fullScreen);
   const isActiveTab = tabId === activeTab;
 
@@ -27,6 +28,8 @@ const EditorPanel = memo(function EditorPanel({ tabId, initialQueryName, initial
     setOutputData(data);
   }, [data]);
 
+
+
   return (
     <div className={`${isActiveTab === false && "hidden"}`}>
       <CodeRunner
@@ -34,6 +37,7 @@ const EditorPanel = memo(function EditorPanel({ tabId, initialQueryName, initial
         setQuery={setQuery}
         value={value}
         setValue={setValue}
+        setTableName={setTableName}
       />
 
       <Split
@@ -48,7 +52,7 @@ const EditorPanel = memo(function EditorPanel({ tabId, initialQueryName, initial
         <div className="overflow-auto dark:bg-[#0d1117] text-base">
           <CodeEditor value={value} setValue={setValue} />
         </div>
-        <div className="overflow-auto relative dark:bg-slate-600">
+        <div className={`overflow-auto relative dark:bg-slate-600 ${!fullScreen ? "w-full" : "w-[calc(100vw-301px)]"}`} >
           <CodeOutput
             isLoading={isLoading}
             data={outputData}

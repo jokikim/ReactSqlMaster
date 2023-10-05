@@ -28,7 +28,8 @@ const useData = (tableName) => {
     const fetchData = (tableName) => {
       setIsLoading(true);
       setData([]);
-      const name = TABLE_NAMES.find((name) => name === tableName);
+      let name = TABLE_NAMES.find((name) => name === tableName);
+      
       if (name) {
         setError(false);
         fetch(getURL(tableName), {

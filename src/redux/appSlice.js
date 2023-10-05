@@ -5,7 +5,7 @@ import throttle from "lodash.throttle";
 
 const initialState = {
   theme: localStorage.getItem("EDITOR_THEME") || "dark",
-  executableQuery: "",
+  executableQuery: "customers",
   activeTab: 1,
   fullScreen: true,
   tabCount: 1,

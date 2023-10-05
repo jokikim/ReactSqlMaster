@@ -27,7 +27,7 @@ const Table = ({
 
 
   return (
-    <table className='dark:text-slate-300 border-collapse border border-hidden text-sm table-auto w-full'>
+    <table className='dark:text-slate-300 border-collapse border border-hidden text-sm table-auto w-full overflow-x-scroll'>
     <thead>
       <tr className='bg-gray-200 dark:bg-indigo-950'>
         <th className='p-2 border border-gray-300 dark:border-slate-600'>
@@ -46,10 +46,10 @@ const Table = ({
     <tbody>
       {data.map((row, rowIndex) => (
         <tr
-          className='even:bg-slate-10 dark:bg-slate-800 dark:even:bg-slate-900'
+          className='even:bg-slate-10 dark:bg-slate-800 dark:even:bg-slate-900 '
           key={rowIndex}
         >
-          <td className='bg-gray-200 dark:bg-indigo-950 p-2 border border-gray-400 dark:border-slate-700'>
+          <td className='bg-gray-200 dark:bg-indigo-950 p-2 border border-gray-400 dark:border-slate-700 '>
             {rowIndex + 1 + (currentPage - 1) * resultsPerPage}
           </td>
           {Object.values(row).map((value, cellIndex) => (

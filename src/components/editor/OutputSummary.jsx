@@ -27,7 +27,7 @@ const OutputSummary = memo(function OutputSummary({
   };
 
   return (
-    <div className={`sticky top-0 dark:bg-slate-900 dark:text-slate-300 bg-gray-50 px-4 py-4 text-sm flex justify-between gap-4 items-center whitespace-nowrap w-full`}>
+    <div className={` dark:bg-slate-900 dark:text-slate-300 bg-gray-50 px-4 py-4 text-sm flex justify-between gap-4 items-center whitespace-nowrap w-full sticky left-0 right-0 top-0`}>
       <div className="flex items-center">
         <button className={`mr-4 flex justify-center items-center text-gray-400 hover:text-gray-600 dark:hover:text-slate-100 ${addClasses(data, "")}`}>
           <span onClick={() => setSplitSize([100, 0])}>
