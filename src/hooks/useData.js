@@ -15,7 +15,10 @@ const useData = (tableName) => {
 
   const convertToJson = (data) => {
     alasql
-      .promise("SELECT * FROM CSV(?, {headers: false, separator:','})", [data])
+      .promise(
+        "SELECT * FROM CSV(?, {headers: false, separator:',', autotype: false})",
+        [data]
+      )
       .then((data) => {
         setData(data);
       })
@@ -23,13 +26,14 @@ const useData = (tableName) => {
         console.log(e.message);
       });
   };
+  
 
   useEffect(() => {
     const fetchData = (tableName) => {
       setIsLoading(true);
       setData([]);
       let name = TABLE_NAMES.find((name) => name === tableName);
-      
+
       if (name) {
         setError(false);
         fetch(getURL(tableName), {
