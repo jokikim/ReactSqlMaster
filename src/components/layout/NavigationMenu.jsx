@@ -47,7 +47,7 @@ const NavigationMenu = () => {
                 </button>
                 {activeTableName === name &&  (
                   <div className="flex flex-col gap-4" >
-                    <button className="rounded-lg bg-green-300 px-4 py-1  dark:text-black font-medium hover:bg-green-400 transition-all ease-in-out duration-150"
+                    <button className="rounded-lg bg-green-300 px-4 py-1  dark:text-black text-white hover:bg-green-400 transition-all ease-in-out duration-150"
                     onClick={() => selectQueryHandler(name)}
                     >Select table</button>
                     <ul className="flex flex-col pl-5 border-l-4 border-[#353F50]">
