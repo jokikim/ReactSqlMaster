@@ -4,7 +4,7 @@ import { convertToNormalString } from "../../utils/utilFunctions";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCurrentEditorValue } from "../../redux/appSlice";
 import useData from "../../hooks/useData";
-import { BsFillArrowRightCircleFill, BsFillArrowUpCircleFill } from "react-icons/bs";
+import {MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowUp} from "react-icons/md"
 import Loader from "../reusable/Loader";
 
 const NavigationMenu = () => {
@@ -37,10 +37,10 @@ const NavigationMenu = () => {
             return (
               <div key={name}>
                 <button
-                  className="flex items-center p-2 my-6 transition-colors dark:text-secondary-light hover:text-white dark:hover:text-white text-slate-800 hover:bg-slate-500 dark:hover:bg-primary-dark duration-200 rounded-lg "
+                  className="flex items-center justify-center p-2 my-6 transition-colors dark:text-secondary-light hover:text-white dark:hover:text-white text-slate-800 hover:bg-slate-500 dark:hover:bg-primary-dark duration-200 rounded-lg "
                   onClick={() => handleQuery(name)}
                 >
-                  {activeTableName === name ? <BsFillArrowUpCircleFill /> : <BsFillArrowRightCircleFill />}
+                  {activeTableName === name ? <MdOutlineKeyboardArrowUp className="mt-1 text-lg" /> : <MdOutlineKeyboardArrowRight className="mt-1 text-lg"/>}
                   <span className="mx-4 text-base font-normal">
                     {name}
                   </span>
