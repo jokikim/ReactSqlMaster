@@ -6,12 +6,15 @@ import { useSelector } from "react-redux";
 import CodeOutput from "./CodeOutput";
 import useData from "../../hooks/useData";
 
-const EditorPanel = memo(function EditorPanel({ tabId, initialQueryName, initialQuery }) {
+const EditorPanel = memo(function EditorPanel({
+  tabId,
+  initialQueryName,
+  initialQuery,
+}) {
   const activeTab = useSelector((state) => state.app.activeTab);
   const [query, setQuery] = useState(initialQueryName);
   const [value, setValue] = useState(initialQuery);
-  const [tableName, setTableName] = useState('');
-  // const executableQuery = useSelector((state) => state.app.executableQuery);
+  const [tableName, setTableName] = useState("");
   const [outputData, setOutputData] = useState(null);
   const { data, runtime, isLoading, splitSize, setSplitSize } =
     useData(tableName);
@@ -28,17 +31,9 @@ const EditorPanel = memo(function EditorPanel({ tabId, initialQueryName, initial
     setOutputData(data);
   }, [data]);
 
-
-
   return (
     <div className={`${isActiveTab === false && "hidden"}`}>
-      <CodeRunner
-        query={query}
-        setQuery={setQuery}
-        value={value}
-        setValue={setValue}
-        setTableName={setTableName}
-      />
+      <CodeRunner value={value} setTableName={setTableName} />
 
       <Split
         className={
@@ -52,12 +47,15 @@ const EditorPanel = memo(function EditorPanel({ tabId, initialQueryName, initial
         <div className="overflow-auto dark:bg-[#0d1117] text-base">
           <CodeEditor value={value} setValue={setValue} />
         </div>
-        <div className={`overflow-auto relative dark:bg-slate-600 ${!fullScreen ? "w-full" : "w-[calc(100vw-301px)]"}`} >
+        <div
+          className={`overflow-auto relative dark:bg-slate-600 ${
+            !fullScreen ? "w-full" : "w-[calc(100vw-301px)]"
+          }`}
+        >
           <CodeOutput
             isLoading={isLoading}
             data={outputData}
             runtime={runtime}
-            splitSize={splitSize}
             setSplitSize={setSplitSize}
           />
         </div>

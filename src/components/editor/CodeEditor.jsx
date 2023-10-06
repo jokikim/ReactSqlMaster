@@ -9,7 +9,7 @@ const CodeEditor = memo(function CodeEditor({ value, setValue }) {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.app.theme);
   const isDarkMode = theme === "dark" ? true : false;
-  
+
   const handleQueryChange = useCallback(
     (newQuery) => {
       dispatch(updateCurrentEditorValue(newQuery));

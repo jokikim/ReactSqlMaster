@@ -1,8 +1,5 @@
 import React, { memo } from "react";
-import {
-  AiOutlineLeftSquare,
-  AiOutlineRightSquare,
-} from "react-icons/ai";
+import { AiOutlineLeftSquare, AiOutlineRightSquare } from "react-icons/ai";
 import CsvExportButton from "../reusable/CsvExportButton";
 import JsonExportButton from "../reusable/JsonExportButton";
 import { MdClose } from "react-icons/md";
@@ -20,35 +17,60 @@ const OutputSummary = memo(function OutputSummary({
   setSplitSize,
   resultsPerPage,
 }) {
-  const formattedRunTime = (Math.round(parseFloat(runtime) * 100) / 100).toFixed(2);
+  const formattedRunTime = (
+    Math.round(parseFloat(runtime) * 100) / 100
+  ).toFixed(2);
 
   const addClasses = (condition, classNames) => {
     return condition ? classNames : "";
   };
 
   return (
-    <div className={` dark:bg-slate-900 dark:text-slate-300 bg-gray-50 px-4 py-4 text-sm flex justify-between gap-4 items-center whitespace-nowrap w-full sticky left-0 right-0 top-0`}>
+    <div
+      className={` dark:bg-slate-900 dark:text-slate-300 bg-gray-50 px-4 py-4 text-sm flex justify-between gap-4 items-center whitespace-nowrap w-full sticky left-0 right-0 top-0`}
+    >
       <div className="flex items-center">
-        <button className={`mr-4 flex justify-center items-center text-gray-400 hover:text-gray-600 dark:hover:text-slate-100 ${addClasses(data, "")}`}>
+        <button
+          className={`mr-4 flex justify-center items-center text-gray-400 hover:text-gray-600 dark:hover:text-slate-100 ${addClasses(
+            data,
+            ""
+          )}`}
+        >
           <span onClick={() => setSplitSize([100, 0])}>
             <MdClose className="w-6 h-6" />
           </span>
         </button>
         {data && (
-          <span className={`mr-4 text-lg bg-white dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600 border-solid border border-gray-500 px-2 py-1 rounded-lg ${addClasses(data, "")}`}>
+          <span
+            className={`mr-4 text-lg bg-white dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600 border-solid border border-gray-500 px-2 py-1 rounded-lg ${addClasses(
+              data,
+              ""
+            )}`}
+          >
             Total Rows: {rowCount}
           </span>
         )}
         {data && (
-          <span className={`mr-4 text-lg px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600 border-solid border border-gray-500 ${addClasses(data, "")}`}>
-            Execution Time: <span className="text-[#4FC996] font-semibold">{formattedRunTime} s</span>
+          <span
+            className={`mr-4 text-lg px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600 border-solid border border-gray-500 ${addClasses(
+              data,
+              ""
+            )}`}
+          >
+            Execution Time:{" "}
+            <span className="text-[#4FC996] font-semibold">
+              {formattedRunTime} s
+            </span>
           </span>
         )}
         {data && (
           <select
             value={resultsPerPage}
             onChange={handleResultsPerPageChange}
-            className={`cursor-pointer mr-2 text-lg px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600 border-solid border border-gray-500 ${addClasses(data, "")}`}
+            className={`cursor-pointer mr-2 text-lg px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600 border-solid border border-gray-500 ${addClasses(
+              data,
+              ""
+            )}`}
           >
             <option value={20}>Show 20</option>
             <option value={50}>Show 50</option>
@@ -56,7 +78,12 @@ const OutputSummary = memo(function OutputSummary({
           </select>
         )}
         {data && (
-          <div className={`cursor-pointer mr-2 text-lg px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600 border-solid border border-gray-500 ${addClasses(data, "")}`}>
+          <div
+            className={`cursor-pointer mr-2 text-lg px-2 py-1 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600 border-solid border border-gray-500 ${addClasses(
+              data,
+              ""
+            )}`}
+          >
             <span className="mx-2">Page</span>
             <input
               className="bg-inherit"
