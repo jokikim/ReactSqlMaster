@@ -28,7 +28,6 @@ const CodeRunner = memo(function CodeRunner({ value, setTableName, setKey }) {
     const randomIndex = Math.floor(Math.random() * TABLE_NAMES.length);
     setTableName( TABLE_NAMES[randomIndex]);
   }
-  
  };
 
 

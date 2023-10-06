@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateCurrentEditorValue } from "../../redux/appSlice";
 import useData from "../../hooks/useData";
 import { BsFillArrowRightCircleFill, BsFillArrowUpCircleFill } from "react-icons/bs";
+import Loader from "../reusable/Loader";
 
 const NavigationMenu = () => {
   const dispatch = useDispatch();
@@ -42,15 +43,16 @@ const NavigationMenu = () => {
                     {finalName}
                   </span>
                 </button>
-                {activeTableName === name && tableSchema && (
+                {activeTableName === name &&  (
                   <div className="pl-5 border-l-4 border-[#353F50]">
                     <ul className="flex flex-col ">
-                      {Object.values(tableSchema).map((val, index) => (
+                      {tableSchema ? Object.values(tableSchema).map((val, index) => (
                         <li key={index} className="flex justify-between">
                           <p>{val}</p>
                           <p className="text-sm text-slate-400">{typeof val}</p>
                         </li>
-                      ))}
+                      )) : <span className="ml-6"><Loader  /></span>
+                    }
                     </ul>
                   </div>
                 )}
