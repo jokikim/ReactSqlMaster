@@ -6,6 +6,7 @@ import DarkModeToggle from "../reusable/DarkModeToggle";
 import TABLE_NAMES from "../../utils/constants";
 import debounce from "lodash.debounce";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 
 const CodeRunner = memo(function CodeRunner({ value, setTableName, setKey }) {
   const dispatch = useDispatch();
@@ -24,9 +25,11 @@ const CodeRunner = memo(function CodeRunner({ value, setTableName, setKey }) {
    setKey(prev => !prev)
    if (tableExist) {
      setTableName(words[words.length - 1]);
+     toast.success('Query run successfully!🚀')
    } else {
-    const randomIndex = Math.floor(Math.random() * TABLE_NAMES.length);
-    setTableName( TABLE_NAMES[randomIndex]);
+     const randomIndex = Math.floor(Math.random() * TABLE_NAMES.length);
+     setTableName( TABLE_NAMES[randomIndex]);
+     toast.success('Showing random table for non existing query!');
   }
  };
 
