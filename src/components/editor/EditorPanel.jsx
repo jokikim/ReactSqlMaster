@@ -8,24 +8,17 @@ import useData from "../../hooks/useData";
 
 const EditorPanel = memo(function EditorPanel({
   tabId,
-  initialQueryName,
   initialQuery,
 }) {
   const activeTab = useSelector((state) => state.app.activeTab);
-  const [query, setQuery] = useState(initialQueryName);
   const [value, setValue] = useState(initialQuery);
   const [tableName, setTableName] = useState("");
   const [outputData, setOutputData] = useState(null);
   const { data, runtime, isLoading, splitSize, setSplitSize } =
     useData(tableName);
-  const [key, setKey] = useState(false);
   const fullScreen = useSelector((state) => state.app.fullScreen);
   const isActiveTab = tabId === activeTab;
 
-  useEffect(() => {
-    
-  } ,[key]);
-  
   useEffect(() => {
     if (initialQuery) {
       setValue(initialQuery);
@@ -38,7 +31,7 @@ const EditorPanel = memo(function EditorPanel({
 
   return (
     <div className={`${isActiveTab === false && "hidden"}`}>
-      <CodeRunner value={value} setTableName={setTableName} setKey={setKey} />
+      <CodeRunner value={value} setTableName={setTableName} />
 
       <Split
         className={

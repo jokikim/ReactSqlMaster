@@ -5,10 +5,9 @@ import { toggleFullScreen } from "../../redux/appSlice";
 import DarkModeToggle from "../reusable/DarkModeToggle";
 import TABLE_NAMES from "../../utils/constants";
 import debounce from "lodash.debounce";
-import { useEffect } from "react";
 import toast from "react-hot-toast";
 
-const CodeRunner = memo(function CodeRunner({ value, setTableName, setKey }) {
+const CodeRunner = memo(function CodeRunner({ value, setTableName }) {
   const dispatch = useDispatch();
 
  const debouncedRunQueryHandler = debounce(() => runQueryHandler(), 500);
@@ -22,7 +21,6 @@ const CodeRunner = memo(function CodeRunner({ value, setTableName, setKey }) {
    const tableExist = TABLE_NAMES.find(
      (name) => name === words[words.length - 1].toLowerCase()
    );
-   setKey(prev => !prev)
    if (tableExist) {
      setTableName(words[words.length - 1]);
      toast.success('Query run successfully!🚀')

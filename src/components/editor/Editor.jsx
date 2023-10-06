@@ -16,7 +16,6 @@ const Editor = () => {
           <EditorPanel
             key={tab.id}
             tabId={tab.id}
-            initialQueryName={tab.queryName}
             initialQuery={tab.query}
             queryResults={tab.queryResults}
           />
