@@ -69,6 +69,12 @@ The app delivers concise and informative error messages and alerts. These notifi
 :white_check_mark: **Export Data in CSV or JSON Format**\
 Empower yourself with the ability to export query results effortlessly. Our application offers a convenient feature that allows you to download your query results in either CSV or JSON format, providing flexibility and compatibility with various data processing tools. Whether you need to share your data with colleagues or import it into other applications, you can easily do so with just a few clicks. This feature enhances your data management capabilities and streamlines your workflow.
 
+:white_check_mark: **Table Schema**\
+The app displays table schemas, showing column names and data types, offering users a quick overview of the database structure for better understanding of their data.
+
+:white_check_mark: **Toast Notifications**\
+The app seamlessly delivers real-time insights with stylish toast notifications, adding a touch of sophistication to the user experience, whether fetching data or executing spontaneous queries.
+
 ## JavaScript Framework and Major Packages Used
 
 - **React**: A popular front-end JavaScript library for building user interfaces.
@@ -80,7 +86,7 @@ Empower yourself with the ability to export query results effortlessly. Our appl
 - **lodash.debounce**: A function provided by lodash that creates a debounced version of a given function, ensuring that the function is called only after a specified delay has passed since the last invocation, effectively preventing the function from being invoked multiple times in quick succession.
 - **Tailwind CSS**: A utility-first CSS framework for building responsive designs & beautiful UI.
 - **react-split**: A resizable and customizable split layout component for React, enabling the implementation of split views and panes in the application.
-
+- **react-hot-toast**: Real-time toast notifications npm package for dynamic user feedback in React applications.
 
 ## ⏱ Page Load Time
 
