@@ -5,11 +5,11 @@ import { toggleFullScreen } from "../../redux/appSlice";
 import DarkModeToggle from "../reusable/DarkModeToggle";
 import TABLE_NAMES from "../../utils/constants";
 import debounce from "lodash.debounce";
+import { useEffect } from "react";
 
-const CodeRunner = memo(function CodeRunner({ value, setTableName }) {
+const CodeRunner = memo(function CodeRunner({ value, setTableName, setKey }) {
   const dispatch = useDispatch();
 
- // Debounce the runQueryHandler function
  const debouncedRunQueryHandler = debounce(() => runQueryHandler(), 500);
 
  const runQueryHandler = () => {
@@ -21,12 +21,16 @@ const CodeRunner = memo(function CodeRunner({ value, setTableName }) {
    const tableExist = TABLE_NAMES.find(
      (name) => name === words[words.length - 1].toLowerCase()
    );
+   setKey(prev => !prev)
    if (tableExist) {
      setTableName(words[words.length - 1]);
    } else {
-     setTableName("products");
-   }
+    const randomIndex = Math.floor(Math.random() * TABLE_NAMES.length);
+    setTableName( TABLE_NAMES[randomIndex]);
+  }
+  
  };
+
 
   return (
     <div className="bg-gray-100  dark:bg-slate-800 flex justify-between items-center px-4 py-2.5 whitespace-nowrap">
@@ -34,7 +38,7 @@ const CodeRunner = memo(function CodeRunner({ value, setTableName }) {
       <button
           disabled={!value}
           onClick={debouncedRunQueryHandler}
-          className="flex justify-center items-center dark:text-slate-100 dark:bg-purple-900 dark:hover:bg-purple-950 bg-purple-700 hover:bg-purple-800 active:bg-purple-800 rounded-lg text-white px-5 py-2.5 gap-1 disabled:bg-gray-400 dark:disabled:bg-gray-500 disabled:cursor-not-allowed"
+          className={`flex justify-center items-center dark:text-slate-100 dark:bg-purple-900 dark:hover:bg-purple-950 bg-purple-700 hover:bg-purple-800 active:bg-purple-800 rounded-lg text-white px-5 py-2.5 gap-1 disabled:bg-gray-400 dark:disabled:bg-gray-500 disabled:cursor-not-allowed ${!value && "bg-gray-400 disabled:cursor-not-allowed"}`}
         >
           <BsPlay className="-ml-2 w-6 h-6" />
           <span className="text-lg">Run</span>

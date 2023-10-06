@@ -6,7 +6,7 @@ import TABLE_NAMES from "../utils/constants";
 const getURL = (name) =>
   `https://api.github.com/repos/graphql-compose/graphql-compose-examples/contents/examples/northwind/data/csv/${name}.csv`;
 
-const useData = (tableName) => {
+const useData = (tableName, key) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [runtime, setRuntime] = useState("");

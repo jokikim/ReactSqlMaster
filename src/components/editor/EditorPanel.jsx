@@ -18,9 +18,14 @@ const EditorPanel = memo(function EditorPanel({
   const [outputData, setOutputData] = useState(null);
   const { data, runtime, isLoading, splitSize, setSplitSize } =
     useData(tableName);
+  const [key, setKey] = useState(false);
   const fullScreen = useSelector((state) => state.app.fullScreen);
   const isActiveTab = tabId === activeTab;
 
+  useEffect(() => {
+    
+  } ,[key]);
+  
   useEffect(() => {
     if (initialQuery) {
       setValue(initialQuery);
@@ -33,7 +38,7 @@ const EditorPanel = memo(function EditorPanel({
 
   return (
     <div className={`${isActiveTab === false && "hidden"}`}>
-      <CodeRunner value={value} setTableName={setTableName} />
+      <CodeRunner value={value} setTableName={setTableName} setKey={setKey} />
 
       <Split
         className={
