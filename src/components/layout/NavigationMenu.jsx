@@ -11,12 +11,12 @@ const NavigationMenu = () => {
   const dispatch = useDispatch();
   const fullScreen = useSelector((state) => state.app.fullScreen);
   const [activeTableName, setActiveTableName] = useState("");
-  const { data, isLoading } = useData(activeTableName);
+  const { data } = useData(activeTableName);
   const [tableSchema, setTableSchema] = useState([]);
 
   const handleQuery = (queryName) => {
     setActiveTableName((prevName) => (prevName === queryName ? "" : queryName));
-    dispatch(updateCurrentEditorValue(`select * from ${queryName};`));
+    // dispatch(updateCurrentEditorValue(`select * from ${queryName};`));
   };
 
   useEffect(() => {
@@ -30,8 +30,7 @@ const NavigationMenu = () => {
       <div className="flex flex-col divide-y px-4 dark:bg-[#171717] dark:text-slate-300 bg-gray-50 min-w-[300px] dark:divide-slate-700 max-h-screen scrollbar-theme overflow-auto">
         <aside className="p-5">
           {TABLE_NAMES.map((name) => {
-            const finalName = convertToNormalString(name);
-
+            // const finalName = convertToNormalString(name);
             return (
               <div key={name}>
                 <button
@@ -40,7 +39,7 @@ const NavigationMenu = () => {
                 >
                   {activeTableName === name ? <BsFillArrowUpCircleFill /> : <BsFillArrowRightCircleFill />}
                   <span className="mx-4 text-base font-normal">
-                    {finalName}
+                    {name}
                   </span>
                 </button>
                 {activeTableName === name &&  (

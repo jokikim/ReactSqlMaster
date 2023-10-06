@@ -27,7 +27,7 @@ const CodeRunner = memo(function CodeRunner({ value, setTableName }) {
    } else {
      const randomIndex = Math.floor(Math.random() * TABLE_NAMES.length);
      setTableName( TABLE_NAMES[randomIndex]);
-     toast.success('Showing random table for non existing query!');
+     toast.success('Showing random table for invalid query!');
   }
  };
 
