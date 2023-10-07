@@ -5,16 +5,14 @@ import throttle from "lodash.throttle";
 
 const initialState = {
   theme: localStorage.getItem("EDITOR_THEME") || "dark",
-  executableQuery: "customers",
   activeTab: 1,
-  fullScreen: true,
+  fullScreen: false,
   tabCount: 1,
   tabs: [{
     id: 1,
     title: "Tab 1",
     queryName: "",
     query: "select * from customers;",
-    queryResults: [],
   }]
 };
 
@@ -41,7 +39,7 @@ const appSlice = createSlice({
       state.activeTab = action.payload;
     },
     addNewTab: (state) => {
-      if (state.tabs.length >= 15) {
+      if (state.tabs.length >= 10) {
         window.alert("Max Tab Limit Reached!!!");
         return;
       }
@@ -77,8 +75,7 @@ const appSlice = createSlice({
         });
 
       } else {
-
-        window.alert("There must be one active Tab!");
+        window.alert("There must be atleast one Tab!");
         return;
       }
 
@@ -91,27 +88,6 @@ const appSlice = createSlice({
       );
       state.tabs[currentTab].query = query;
     },
-    runQueryHandler: (state) => {
-      const currentTab = state.tabs.findIndex(
-        (tab) => tab.id.toString() === state.activeTab.toString()
-      );
-      const currentQuery = state.tabs[currentTab].query;
-      let query = currentQuery.toLowerCase();
-    
-      if (query.endsWith(';')) {
-        query = query.slice(0, -1);
-      }
-      const words = query.split(' ');
-      state.executableQuery = words[words.length - 1];
-    },
-    
-    updateCurrentEditorResults: (state, action) => {
-      const results = action.payload;
-      const currentTab = state.tabs.findIndex(
-        (tab) => tab.id.toString() === state.activeTab.toString()
-      );
-      state.tabs[currentTab].queryResults = results;
-    }
   },
 });
 
@@ -122,7 +98,5 @@ export const {
   addNewTab,
   removeTab,
   updateCurrentEditorValue,
-  runQueryHandler,
-  updateCurrentEditorResults
 } = appSlice.actions;
 export default appSlice.reducer;

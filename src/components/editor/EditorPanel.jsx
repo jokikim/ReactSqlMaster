@@ -35,7 +35,7 @@ const EditorPanel = memo(function EditorPanel({
 
       <Split
         className={
-          fullScreen ? "h-[calc(100vh-118px)]" : "h-[calc(100vh-68px)]"
+          !fullScreen ? "h-[calc(100vh-118px)]" : "h-[calc(100vh-68px)]"
         }
         direction="vertical"
         minSize={0}
@@ -47,7 +47,7 @@ const EditorPanel = memo(function EditorPanel({
         </div>
         <div
           className={`overflow-auto relative dark:bg-slate-600 ${
-            !fullScreen ? "w-full" : "w-[calc(100vw-301px)]"
+            fullScreen ? "w-full" : "w-[calc(100vw-301px)]"
           }`}
         >
           <CodeOutput

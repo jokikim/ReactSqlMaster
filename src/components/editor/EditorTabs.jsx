@@ -25,7 +25,7 @@ const EditorTabs = () => {
     <div className="flex flex-col divide-y dark:divide-slate-700">
       <div
         className={`${
-          fullScreen ? "" : "hidden"
+          !fullScreen ? "" : "hidden"
         } flex justify-between divide-y dark:bg-gray-900 dark:text-slate-300 h-12`}
       >
         <div className="flex gap-x-1">

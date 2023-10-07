@@ -29,7 +29,7 @@ const NavigationMenu = () => {
   }, [data]);
 
   return (
-    fullScreen && (
+    !fullScreen && (
       <div className="flex flex-col divide-y px-4 dark:bg-[#171717] dark:text-slate-300 bg-gray-50 min-w-[300px] dark:divide-slate-700 max-h-screen scrollbar-theme overflow-auto">
         <aside className="p-5">
           {TABLE_NAMES.map((name) => {
@@ -50,13 +50,13 @@ const NavigationMenu = () => {
                     <button className="rounded-lg bg-green-300 px-4 py-1  dark:text-black text-white hover:bg-green-400 transition-all ease-in-out duration-150"
                     onClick={() => selectQueryHandler(name)}
                     >Select table</button>
-                    <ul className="flex flex-col pl-5 border-l-4 border-[#353F50]">
+                    <ul className="flex flex-col pl-5 border-l-4 border-[#353F50] justify-center">
                       {tableSchema ? Object.values(tableSchema).map((val, index) => (
                         <li key={index} className="flex justify-between">
                           <p>{val}</p>
                           <p className="text-sm text-slate-400">{typeof val}</p>
                         </li>
-                      )) : <span className="ml-6"><Loader  /></span>
+                      )) : <span className="ml-6 my-auto"><Loader  /></span>
                     }
                     </ul>
                   </div>
