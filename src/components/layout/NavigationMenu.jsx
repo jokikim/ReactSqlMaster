@@ -4,7 +4,10 @@ import { convertToNormalString } from "../../utils/utilFunctions";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCurrentEditorValue } from "../../redux/appSlice";
 import useData from "../../hooks/useData";
-import {MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowUp} from "react-icons/md"
+import {
+  MdOutlineKeyboardArrowRight,
+  MdOutlineKeyboardArrowUp,
+} from "react-icons/md";
 import Loader from "../reusable/Loader";
 
 const NavigationMenu = () => {
@@ -17,10 +20,10 @@ const NavigationMenu = () => {
   const handleQuery = (queryName) => {
     setActiveTableName((prevName) => (prevName === queryName ? "" : queryName));
   };
-  
+
   const selectQueryHandler = (queryName) => {
     dispatch(updateCurrentEditorValue(`select * from ${queryName};`));
-  }
+  };
 
   useEffect(() => {
     if (data) {
@@ -40,24 +43,36 @@ const NavigationMenu = () => {
                   className="flex items-center justify-center p-2 my-6 transition-colors dark:text-secondary-light hover:text-white dark:hover:text-white text-slate-800 hover:bg-slate-500 dark:hover:bg-primary-dark duration-200 rounded-lg "
                   onClick={() => handleQuery(name)}
                 >
-                  {activeTableName === name ? <MdOutlineKeyboardArrowUp className="mt-1 text-lg" /> : <MdOutlineKeyboardArrowRight className="mt-1 text-lg"/>}
-                  <span className="mx-4 text-base font-normal">
-                    {name}
-                  </span>
+                  {activeTableName === name ? (
+                    <MdOutlineKeyboardArrowUp className="mt-1 text-lg" />
+                  ) : (
+                    <MdOutlineKeyboardArrowRight className="mt-1 text-lg" />
+                  )}
+                  <span className="mx-4 text-base font-normal">{name}</span>
                 </button>
-                {activeTableName === name &&  (
-                  <div className="flex flex-col gap-4" >
-                    <button className="rounded-lg bg-green-300 px-4 py-1  dark:text-black text-white hover:bg-green-400 transition-all ease-in-out duration-150"
-                    onClick={() => selectQueryHandler(name)}
-                    >Select table</button>
+                {activeTableName === name && (
+                  <div className="flex flex-col gap-4">
+                    <button
+                      className="rounded-lg bg-green-300 px-4 py-1  dark:text-black text-white hover:bg-green-400 transition-all ease-in-out duration-150"
+                      onClick={() => selectQueryHandler(name)}
+                    >
+                      Select table
+                    </button>
                     <ul className="flex flex-col pl-5 border-l-4 border-[#353F50] justify-center">
-                      {tableSchema ? Object.values(tableSchema).map((val, index) => (
-                        <li key={index} className="flex justify-between">
-                          <p>{val}</p>
-                          <p className="text-sm text-slate-400">{typeof val}</p>
-                        </li>
-                      )) : <span className="ml-6 my-auto"><Loader  /></span>
-                    }
+                      {tableSchema ? (
+                        Object.values(tableSchema).map((val, index) => (
+                          <li key={index} className="flex justify-between">
+                            <p>{val}</p>
+                            <p className="text-sm text-slate-400">
+                              {val.slice(-2).toLowerCase() === "id" ? "number" : typeof val}
+                            </p>
+                          </li>
+                        ))
+                      ) : (
+                        <span className="ml-6 my-auto">
+                          <Loader />
+                        </span>
+                      )}
                     </ul>
                   </div>
                 )}
@@ -71,5 +86,3 @@ const NavigationMenu = () => {
 };
 
 export default NavigationMenu;
-
-
