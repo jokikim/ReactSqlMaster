@@ -12,8 +12,8 @@ const CodeEditor = memo(function CodeEditor({ value, setValue }) {
 
   const handleQueryChange = useCallback(
     (newQuery) => {
-      dispatch(updateCurrentEditorValue(newQuery));
-      setValue(newQuery);
+      dispatch(updateCurrentEditorValue(newQuery.trim()));
+      setValue(newQuery.trim());
     },
     [dispatch, setValue]
   );
