@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import EditorTabs from "./EditorTabs";
 import EditorPanel from "./EditorPanel";
 import { useSelector } from "react-redux";
 
-const Editor = () => {
+const Editor = memo(function Editor() {
   const tabs = useSelector((state) => state.app.tabs);
 
   return (
@@ -23,6 +23,6 @@ const Editor = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Editor;

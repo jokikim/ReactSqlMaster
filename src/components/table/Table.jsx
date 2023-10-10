@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Loader from '../reusable/Loader';
 
-const Table = ({
+const Table = memo(function Table ({
   tableHeader,
   isLoading,
   data,
   currentPage,
   resultsPerPage,
-}) => {
+}) {
 
   if (isLoading) {
     return (
@@ -65,6 +65,6 @@ const Table = ({
     </tbody>
   </table>
   );
-};
+});
 
 export default Table;

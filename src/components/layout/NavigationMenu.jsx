@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import TABLE_NAMES from "../../utils/constants";
 import { convertToNormalString } from "../../utils/utilFunctions";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +10,7 @@ import {
 } from "react-icons/md";
 import Loader from "../reusable/Loader";
 
-const NavigationMenu = () => {
+const NavigationMenu = memo(function NavigationMenu() {
   const dispatch = useDispatch();
   const fullScreen = useSelector((state) => state.app.fullScreen);
   const [activeTableName, setActiveTableName] = useState("");
@@ -83,6 +83,6 @@ const NavigationMenu = () => {
       </div>
     )
   );
-};
+});
 
 export default NavigationMenu;
