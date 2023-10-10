@@ -47,7 +47,7 @@ const OutputSummary = memo(function OutputSummary({
               ""
             )}`}
           >
-            Total Rows: {rowCount}
+            Total Rows: {rowCount - 1}
           </span>
         )}
         {data && (
