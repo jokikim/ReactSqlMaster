@@ -42,7 +42,7 @@ const EditorPanel = memo(function EditorPanel({
         snapOffset={30}
         sizes={splitSize}
       >
-        <div className="overflow-auto dark:bg-[#0d1117] text-base">
+        <div className={`dark:bg-[#0d1117] text-base ${fullScreen ? "w-full" : "w-[calc(100vw-301px)]"}`}>
           <CodeEditor value={value} setValue={setValue} />
         </div>
         <div

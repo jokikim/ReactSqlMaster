@@ -34,7 +34,6 @@ const appSlice = createSlice({
     increaseTabCount: (state) => {
       state.tabCount = (prevState) => prevState + 1;
     },
-
     changeActiveTab: (state, action) => {
       state.activeTab = action.payload;
     },
