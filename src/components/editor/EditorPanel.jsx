@@ -6,10 +6,7 @@ import { useSelector } from "react-redux";
 import CodeOutput from "./CodeOutput";
 import useData from "../../hooks/useData";
 
-const EditorPanel = memo(function EditorPanel({
-  tabId,
-  initialQuery,
-}) {
+const EditorPanel = memo(function EditorPanel({ tabId, initialQuery }) {
   const activeTab = useSelector((state) => state.app.activeTab);
   const [value, setValue] = useState(initialQuery);
   const [tableName, setTableName] = useState("");
@@ -42,7 +39,11 @@ const EditorPanel = memo(function EditorPanel({
         snapOffset={30}
         sizes={splitSize}
       >
-        <div className={`dark:bg-[#0d1117] text-base ${fullScreen ? "w-full" : "w-[calc(100vw-301px)]"}`}>
+        <div
+          className={`dark:bg-[#0d1117] text-base ${
+            fullScreen ? "w-full" : "w-[calc(100vw-301px)]"
+          }`}
+        >
           <CodeEditor value={value} setValue={setValue} />
         </div>
         <div
