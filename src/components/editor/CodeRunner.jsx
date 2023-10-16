@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { BsAspectRatio, BsPlay } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { toggleFullScreen } from "../../redux/appSlice";
@@ -7,7 +7,7 @@ import TABLE_NAMES from "../../utils/constants";
 import debounce from "lodash.debounce";
 import toast from "react-hot-toast";
 
-const CodeRunner = memo(function CodeRunner({ value, setTableName }) {
+const CodeRunner = ({ value, setTableName }) => {
   const dispatch = useDispatch();
 
  const debouncedRunQueryHandler = debounce(() => runQueryHandler(), 500);
@@ -57,6 +57,6 @@ const CodeRunner = memo(function CodeRunner({ value, setTableName }) {
       </div>
     </div>
   );
-});
+};
 
 export default CodeRunner;

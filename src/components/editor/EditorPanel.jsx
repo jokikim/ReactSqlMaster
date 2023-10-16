@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CodeRunner from "./CodeRunner";
 import Split from "react-split";
 import CodeEditor from "./CodeEditor";
@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import CodeOutput from "./CodeOutput";
 import useData from "../../hooks/useData";
 
-const EditorPanel = memo(function EditorPanel({ tabId, initialQuery }) {
+const EditorPanel = ({ tabId, initialQuery }) => {
   const activeTab = useSelector((state) => state.app.activeTab);
   const [value, setValue] = useState(initialQuery);
   const [tableName, setTableName] = useState("");
@@ -61,6 +61,6 @@ const EditorPanel = memo(function EditorPanel({ tabId, initialQuery }) {
       </Split>
     </div>
   );
-});
+};
 
 export default EditorPanel;
